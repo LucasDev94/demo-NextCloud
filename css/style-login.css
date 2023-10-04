@@ -1,0 +1,18 @@
+@charset "UTF-8";
+:root {
+  --bgClouds: url(../images/cloud.jpg)
+  --letraGeneral: "Open Sans", sans-serif;
+  --color-main-text: #222222;
+  --color-primary-element-text: #ffffff;
+}
+
+html {
+  box-sizing: border-box;
+  /*El 100% = 16px (tamaño de letra por defecto), entonces el 62.5% = 10px*/
+  font-size: 62.5%;
+}
+
+*, *::before, *:after {
+  /*inherit hereda el box-sizing de su elemento padre que puede ser cualquier elemento, por ejemplo un div*/
+  box-sizing: inherit;
+}/*# sourceMappingURL=style-login.css.map */
