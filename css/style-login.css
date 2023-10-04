@@ -3,6 +3,8 @@
   --letra-general: "Open Sans", sans-serif;
   --color-main-text: #222222;
   --color-primary-element-text: #ffffff;
+  --color-main-background-blur: rgba(255, 255, 255, .8);
+  --filter-background-blur: blur(25px);
 }
 
 html {
@@ -36,7 +38,6 @@ body {
 }
 
 .login {
-  background: rgb(201, 196, 196);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +48,9 @@ body {
   width: 320px;
   height: 312px;
   padding: 12px;
-  background: green;
+  background: var(--color-main-background-blur);
+  -webkit-backdrop-filter: var(--filter-background-blur);
+          backdrop-filter: var(--filter-background-blur);
   display: flex;
   flex-direction: column;
   border: 1px solid #000;
@@ -69,10 +72,25 @@ body {
 }
 
 .footer {
-  background: rgb(219, 165, 165);
+  width: 320px;
   height: auto;
   min-height: 20vh;
   display: flex;
   align-items: end;
+  justify-content: center;
   padding-bottom: 24px;
+  font-size: 1.4rem;
+}
+.footer-info {
+  text-align: center;
+  background: var(--color-main-background-blur);
+  -webkit-backdrop-filter: var(--filter-background-blur);
+          backdrop-filter: var(--filter-background-blur);
+  color: var(--color-main-text);
+  padding: 12px 12px;
+  border-radius: 20px;
+  width: 100%;
+}
+.footer-info-name {
+  font-weight: 700;
 }/*# sourceMappingURL=style-login.css.map */
