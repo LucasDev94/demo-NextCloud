@@ -103,6 +103,16 @@ body {
   border-color: #006aa3;
   transition: 0.3s;
 }
+.login-form-pssw-iconError {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #e9322d;
+}
+.login-form-pssw-iconError .material-symbols-outlined {
+  font-size: 1.5rem;
+  margin-right: 4px;
+}
 .login-form-submit {
   background-color: #006aa3;
   color: var(--color-primary-element-text);

@@ -111,6 +111,18 @@ body {
                 transition: .3s;
             }
         }
+
+        &-iconError{
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: #e9322d;
+
+            .material-symbols-outlined{
+                font-size: 1.5rem;
+                margin-right: 4px;
+            }
+        }
     }
 
     &-submit{
