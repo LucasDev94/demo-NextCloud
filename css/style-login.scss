@@ -1,5 +1,4 @@
 :root {
-  --bgClouds: url(../images/cloud.jpg);
   --letra-general: "Open Sans", sans-serif;
   --color-main-text: #222222;
   --color-primary-element-text: #ffffff;
@@ -29,6 +28,10 @@ body {
   justify-content: center;
   align-items: center;
   font-family: var(--letra-general);
+  background-image: url(../images/clouds.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .login {
