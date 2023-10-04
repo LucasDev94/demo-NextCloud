@@ -44,6 +44,14 @@ body {
   align-items: center;
   height: 80vh;
 
+  &-logo{
+    margin-bottom: 20px;
+
+    &-img{
+        width: 180px;
+    }
+  }
+
   &-form {
     width: 320px;
     height: 312px;
