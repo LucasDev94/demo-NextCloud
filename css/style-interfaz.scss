@@ -1,0 +1,34 @@
+:root {
+  --letra-general: "Open Sans", sans-serif;
+  --color-main-text: #222222;
+  --color-primary-element-text: #ffffff;
+  --color-main-background-blur: rgba(255, 255, 255, 0.8);
+  --filter-background-blur: blur(25px);
+  --box-shadow-form: 0 0 10px rgba(77, 77, 77, 0.5);
+}
+
+html {
+  box-sizing: border-box;
+  /*El 100% = 16px (tamaño de letra por defecto), entonces el 62.5% = 10px*/
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*:after {
+  /*inherit hereda el box-sizing de su elemento padre que puede ser cualquier elemento, por ejemplo un div*/
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 8px;
+    background: url(../images/clouds.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
