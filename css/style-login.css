@@ -3,9 +3,9 @@
   --letra-general: "Open Sans", sans-serif;
   --color-main-text: #222222;
   --color-primary-element-text: #ffffff;
-  --color-main-background-blur: rgba(255, 255, 255, .8);
+  --color-main-background-blur: rgba(255, 255, 255, 0.8);
   --filter-background-blur: blur(25px);
-  --box-shadow-form: 0 0 10px rgba(77, 77, 77, .5);
+  --box-shadow-form: 0 0 10px rgba(77, 77, 77, 0.5);
 }
 
 html {
@@ -54,8 +54,8 @@ body {
 }
 .login-form {
   width: 320px;
-  height: 312px;
-  padding: 12px;
+  height: 320px;
+  padding: 10px;
   background: var(--color-main-background-blur);
   -webkit-backdrop-filter: var(--filter-background-blur);
           backdrop-filter: var(--filter-background-blur);
@@ -88,6 +88,16 @@ body {
   border-color: #006aa3;
   transition: 0.3s;
 }
+.login-form-user-error {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #e9322d;
+}
+.login-form-user-error .material-symbols-outlined {
+  font-size: 1.5rem;
+  margin-right: 4px;
+}
 .login-form-pssw {
   display: flex;
   flex-direction: column;
@@ -103,13 +113,13 @@ body {
   border-color: #006aa3;
   transition: 0.3s;
 }
-.login-form-pssw-iconError {
+.login-form-pssw-error {
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   color: #e9322d;
 }
-.login-form-pssw-iconError .material-symbols-outlined {
+.login-form-pssw-error .material-symbols-outlined {
   font-size: 1.5rem;
   margin-right: 4px;
 }
@@ -150,4 +160,8 @@ body {
 }
 .footer-info-name {
   font-weight: 700;
+}
+
+.inactive {
+  display: none;
 }/*# sourceMappingURL=style-login.css.map */
