@@ -240,13 +240,23 @@ body.contain {
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 7fr 1fr 1fr 1.5fr 2fr;
-  height: 4.5rem;
+  height: 5rem;
   border-bottom: 1px solid #e2e2e2;
+  cursor: pointer;
 }
 .main-content-docs > .docs > .docs-body > tr > td {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main-content-docs > .docs > .docs-body > tr > td > .material-symbols-outlined {
+  font-size: 3rem;
+}
+.main-content-docs > .docs > .docs-body > tr > td > input {
+  opacity: 0.3;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 1px;
 }
 .main-content-docs > .docs > .docs-body > tr > td > span {
   margin-right: 8px;
@@ -261,6 +271,9 @@ body.contain {
   font-weight: 700;
   color: #0082c9;
   background-color: rgb(192, 236, 238);
+}
+.main-content-docs > .docs > .docs-body > tr > td > .folder {
+  color: #0082c9;
 }
 .main-content-docs > .docs > .docs-body > tr > td > .docx {
   color: #49abea;
@@ -279,6 +292,12 @@ body.contain {
 .main-content-docs > .docs > .docs-body > tr > td:nth-child(5) {
   justify-content: end;
   padding-right: 8px;
+}
+.main-content-docs > .docs > .docs-body > tr:hover {
+  background-color: #f5f5f5;
+}
+.main-content-docs > .docs > .docs-body > tr:hover input {
+  opacity: 1;
 }
 .main-details {
   background: rgb(192, 201, 115);
