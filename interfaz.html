@@ -38,7 +38,7 @@
     </header>
 
     <main class="main">
-      <div class="main-navigation inactive">
+      <div class="main-navigation">
         <div class="main-navigation-docs">
             <ul>
                 <li class="main-navigation-docs-item"><span class="main-navigation-docs-item-name"><span class="material-symbols-outlined">folder</span>Todos los archivos</span></li>
@@ -66,7 +66,7 @@
             <span class="material-symbols-outlined">house</span>
             <span class="material-symbols-outlined">arrow_forward_ios</span>
             <div class="main-content-bar-left-new">
-              <button>+ Nuevo</button>
+              <button><span class="material-symbols-outlined">add</span> Nuevo</button>
               <div class="main-content-bar-left-new-menu menu-new-elements inactive">
                 <ul>
                   <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">folder</span>Nueva Carpeta</li>
@@ -162,9 +162,66 @@
       </div>
 
       <aside class="main-details">
-        <div class="main-details-docs"></div>
-        <div class="main-details-menu"></div>
-        <div class="main-details-share"></div>
+        <div class="main-details-title">
+          <div class="main-details-title-icon">
+            <span class="material-symbols-outlined">description</span>
+            <span class="material-symbols-outlined">star</span>
+          </div>
+          <div class="main-details-title-name">
+            <h3>Inventario.docx</h3>
+            <p>34 KB, hace 2 meses</p>
+          </div>
+          <span class="material-symbols-outlined">more_horiz</span>
+          <span class="material-symbols-outlined">close</span>
+        </div>
+        <div class="main-details-menu">
+          <ul class="main-details-menu-list">
+            <li class="main-details-menu-list-item">
+              <span class="material-symbols-outlined">bolt</span>
+              <p>Actividad</p>
+            </li>
+            <li class="main-details-menu-list-item">
+              <span class="material-symbols-outlined">share</span>
+              <p>Compartir</p>
+            </li>
+            <li class="main-details-menu-list-item">
+              <span class="material-symbols-outlined">history</span>
+              <p>Versiones</p>
+            </li>
+          </ul>
+        </div>
+        <div class="main-details-share">
+          <ul class="main-details-share-list">
+            <li class="main-details-share-list-item inactive">
+              <span class="material-symbols-outlined">light_mode</span>
+              <p>Por el momento este apartado no contiene información</p>
+            </li>
+
+            <li class="main-details-share-list-item links">
+              <div class="publicLink">
+                <div>
+                  <span class="material-symbols-outlined">link</span>
+                  <p>Compartir enlace</p>
+                </div>
+                <span class="material-symbols-outlined">add</span>
+              </div>
+              <div class="owner">
+                <p></p>
+                <span>LA</span><p>Lucas Alvarez Hernandez</p>
+              </div>
+              <div class="thanks">
+                <h4>Busca más personas con quien compartir</h4>
+                <input type="text" placeholder="ejemplo @johanaSarmiento">
+                <p><span class="material-symbols-outlined">sentiment_very_satisfied</span>Gracias por utilizar la opcion de busqueda personas, aun no funciona ejjeje, pero la idea es en algun momento darle funcionalidad</p>
+              </div>
+            </li>            
+          
+            <li class="main-details-share-list-item inactive">
+              <span class="material-symbols-outlined">light_mode</span>
+              <p>Por el momento este apartado no contiene información</p> 
+            </li>
+          </ul>
+        </div>
       </aside>
     </main>
   </body>
