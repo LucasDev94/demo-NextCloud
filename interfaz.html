@@ -66,14 +66,31 @@
             <span class="material-symbols-outlined">house</span>
             <span class="material-symbols-outlined">arrow_forward_ios</span>
             <div class="main-content-bar-left-new">
-              <button><span class="material-symbols-outlined">add</span> Nuevo</button>
-              <div class="main-content-bar-left-new-menu menu-new-elements inactive">
-                <ul>
-                  <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">folder</span>Nueva Carpeta</li>
-                  <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">description</span>Nuevo archivo de texto</li>
-                  <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">stay_primary_landscape</span>Nuevo presentación</li>
-                  <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">analytics</span>Nuevo diagrama</li>
-                </ul>
+              <button id="new-element"><span class="material-symbols-outlined">add</span> Nuevo</button>
+              <div class="main-content-bar-left-new-menu menu-new-elements">
+                <form  id="create-new-element">
+                  <div class="title-closed">
+                    <h3>Crear nuevo elemento</h3>
+                    <span class="material-symbols-outlined close-menu-new-element">close</span>
+                  </div>
+                  <div class="input-name-new-element">
+                    <h4>ingresa el nombre</h4>
+                    <input type="text" id="name-new-element">
+                  </div>
+                  <div class="options-new-elements">
+                    <h4>Escoja el tipo de elemento</h4>
+                    <label for="opt-folder"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="folder" id="opt-folder"><span class="material-symbols-outlined">folder</span>Nueva Carpeta</label>
+                    <label for="opt-docx"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="documento" id="opt-docx"><span class="material-symbols-outlined">description</span>Nuevo archivo de texto</label>
+                    <label for="opt-pptx"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="present" id="opt-pptx"><span class="material-symbols-outlined">stay_primary_landscape</span>Nuevo presentación</label>
+                    <label for="opt-dwg"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="diagrama" id="opt-dwg"><span class="material-symbols-outlined">analytics</span>Nuevo diagrama</label>             
+                                       
+                    <!-- <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">folder</span>Nueva Carpeta</li>
+                    <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">description</span>Nuevo archivo de texto</li>
+                    <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">stay_primary_landscape</span>Nuevo presentación</li>
+                    <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">analytics</span>Nuevo diagrama</li> -->
+                  </div>
+                  <input type="submit" name="" class="create-new-element">
+                </form>
               </div>
             </div>
           </div>
