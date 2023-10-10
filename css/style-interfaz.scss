@@ -600,7 +600,7 @@ body.contain {
 
 @media (min-width: 701px) and (max-width: 900px){
   .main-navigation{
-    width: 240px;
+    width: 230px;
   }
 
   th:nth-child(5){
@@ -613,5 +613,12 @@ body.contain {
 
   .docs-body tr{
     grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr 1fr !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px){
+  .main-navigation{
+    width: 260px;
+    //background-color: #929292 !important;
   }
 }
