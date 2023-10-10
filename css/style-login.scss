@@ -1,0 +1,185 @@
+:root {
+  --letra-general: "Open Sans", sans-serif;
+  --color-main-text: #222222;
+  --color-primary-element-text: #ffffff;
+  --color-main-background-blur: rgba(255, 255, 255, 0.8);
+  --filter-background-blur: blur(25px);
+  --box-shadow-form: 0 0 10px rgba(77, 77, 77, 0.5);
+}
+
+html {
+  box-sizing: border-box;
+  /*El 100% = 16px (tamaño de letra por defecto), entonces el 62.5% = 10px*/
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*:after {
+  /*inherit hereda el box-sizing de su elemento padre que puede ser cualquier elemento, por ejemplo un div*/
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--letra-general);
+  background-image: url(../images/clouds.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login {
+  //background: rgb(201, 196, 196);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100vh;
+
+  &-logo {
+    margin-bottom: 20px;
+
+    &-img {
+      width: 180px;
+    }
+  }
+
+  &-form {
+    width: 320px;
+    height: 320px;
+    padding: 10px;
+    background: var(--color-main-background-blur);
+    backdrop-filter: var(--filter-background-blur);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //border: 1px solid #000;
+    border: none;
+    border-radius: 28px;
+    box-shadow: var(--box-shadow-form);
+    font-size: 1.5rem;
+
+    &-title {
+      color: var(--color-main-text);
+      font-size: 2rem;
+      text-align: center;
+      margin: 8px 0 20px;
+    }
+
+    &-user {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      gap: 8px;
+
+      input {
+        padding: 8px;
+        border-radius: 8px;
+        border: 2px solid #949494;
+
+        &:hover {
+          border-color: #006aa3;
+          transition: 0.3s;
+        }
+      }
+
+      &-error {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        color: #e9322d;
+
+        .material-symbols-outlined {
+          font-size: 1.5rem;
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &-pssw {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      gap: 8px;
+
+      input {
+        padding: 8px;
+        border-radius: 8px;
+        border: 2px solid #949494;
+
+        &:hover {
+          border-color: #006aa3;
+          transition: 0.3s;
+        }
+      }
+
+      &-error {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        color: #e9322d;
+
+        .material-symbols-outlined {
+          font-size: 1.5rem;
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &-submit {
+      background-color: #006aa3;
+      color: var(--color-primary-element-text);
+      padding: 12px;
+      border-radius: 24px;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover {
+        background: #3287b5;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.footer {
+  //background: rgb(219, 165, 165);
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 24px;
+  font-size: 1.4rem;
+
+  &-info {
+    text-align: center;
+    background: var(--color-main-background-blur);
+    backdrop-filter: var(--filter-background-blur);
+    color: var(--color-main-text);
+    padding: 12px 12px;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: var(--box-shadow-form);
+
+    &-name {
+      font-weight: 700;
+    }
+  }
+}
+
+.inactive{
+  display: none;
+}
