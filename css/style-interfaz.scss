@@ -358,7 +358,7 @@ body.contain {
           & > tr {
             width: 100%;
             display: grid;
-            grid-template-columns: 0.5fr 7fr 1fr 1fr 1.5fr 2fr;
+            grid-template-columns: 0.5fr 7fr 1fr 1.5fr 2fr 1fr;
             //background-color: darkgoldenrod;
             height: 4.5rem;
             font-weight: 300;
@@ -382,7 +382,7 @@ body.contain {
           & > tr {
             width: 100%;
             display: grid;
-            grid-template-columns: 0.5fr 7fr 1fr 1fr 1.5fr 2fr;
+            grid-template-columns: 0.5fr 8fr 0.5fr 1.5fr 2fr 0.5fr;
             height: 5rem;
             border-bottom: var(--border);
             cursor: pointer;
@@ -439,16 +439,26 @@ body.contain {
             }
 
             & > td:nth-child(2),
-            td:nth-child(6) {
+            td:nth-child(5) {
               //background-color: yellowgreen;
               justify-content: start;
               padding-left: 8px;
             }
 
-            & > td:nth-child(5) {
+            & > td:nth-child(4) {
               //background-color: yellowgreen;
               justify-content: end;
               padding-right: 8px;
+            }
+
+            & > td:nth-child(6){
+              & > span{
+                color: #00000094;
+              
+                &:hover{
+                  color: #000;
+                }
+              }
             }
 
             &:hover {
@@ -662,7 +672,7 @@ body.contain {
   }
 
   .docs-body tr {
-    grid-template-columns: 0.5fr 7fr 1fr 1fr !important;
+    grid-template-columns: 0.5fr 6fr 1fr 1fr !important;
   }
 }
 
@@ -680,7 +690,7 @@ body.contain {
   }
 
   .docs-body tr {
-    grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr 1fr !important;
+    grid-template-columns: 0.5fr 4fr 0.5fr 1fr 0.5fr !important;
   }
 }
 
@@ -688,5 +698,9 @@ body.contain {
   .main-navigation {
     width: 260px;
     //background-color: #929292 !important;
+  }
+
+  .docs-body tr {
+    grid-template-columns: 0.4fr 4fr 0.4fr 1fr 1.5fr 0.4fr!important;
   }
 }

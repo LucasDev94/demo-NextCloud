@@ -30,15 +30,15 @@ function closeMenuCreateNewElement() {
 
 /* Funcion para crear elementos y agregarlos al main-content */
 createNewElement.addEventListener("submit", addNewElement);
-function addNewElement (event){
+function addNewElement(event) {
   event.preventDefault();
-  
+
   const nameNewElement = document.querySelector("#name-new-element").value;
   const optionsTypeElement = document.getElementsByName("options-elements");
-  
+
   let optionSelect = undefined;
-  for(let i = 0; i < optionsTypeElement.length; i++){
-    if (optionsTypeElement[i].checked){
+  for (let i = 0; i < optionsTypeElement.length; i++) {
+    if (optionsTypeElement[i].checked) {
       optionSelect = optionsTypeElement[i].value;
       break;
     }
@@ -48,16 +48,62 @@ function addNewElement (event){
     name: nameNewElement,
     type: optionSelect,
     date: new Date(),
+  };
+
+  const tr = document.createElement("tr");
+
+  const tdCheckbox = document.createElement("td");
+  const inputCheckbox = document.createElement("input");
+  inputCheckbox.setAttribute("type", "checkbox");
+
+  const tdName = document.createElement("td");
+  const tdNameIcon = document.createElement("span");
+  tdNameIcon.classList.add("material-symbols-outlined");
+
+  /** Practicando lo aprendido en clase */
+  /** Con el objeto y la funicon se valida la opcion seleccionada en el form tipo radio para agregar la clase correspondiente */
+  let typeClassNewElement = {
+    folder: "folder",
+    documento: "docx",
+    present: "pptx",
+    diagrama: "dwg",
+  };
+
+  if (typeClassNewElement[optionSelect]) {
+    tdNameIcon.classList.add(typeClassNewElement[optionSelect]);
   }
-  
-  console.log("Creando nuevo elemento. Nombre:", nameNewElement, "Opción seleccionada:", optionSelect, "Objeto creado:", elementToCreate);
+
+  /** Objeto para agregar text al span y asi obtener el icono correspondiente */
+  let typeTextNewElement = {
+    folder: "folder",
+    documento: "description",
+    present: "stay_primary_landscape",
+    diagrama: "analytics",
+  };
+
+  if (typeTextNewElement[optionSelect]){
+    tdNameIcon.innerText = typeTextNewElement[optionSelect]
+  }
+
+  console.log(
+    "Creando nuevo elemento. Nombre:",
+    nameNewElement,
+    "Opción seleccionada:",
+    optionSelect,
+    "Objeto creado:",
+    elementToCreate,
+    "Revisando si a tdNameIcon se le agrego correctamente su clase:",
+    tdNameIcon
+  );
 }
 
-// <tr>
-//   <td><input type="checkbox"></td>
-//   <td><span class="material-symbols-outlined folder">folder</span>Documentación tecnica</td>
-//   <td><p>CJ</p></td>
-//   <td><span class="material-symbols-outlined dots-details">more_horiz</span></td>
-//   <td>Tamaño</td>
-//   <td>Modificado</td>
-// </tr>
+{
+  /* <tr>
+  <td><input type="checkbox"></td>
+  <td><span class="material-symbols-outlined dwg">analytics</span>ruta de evacuación.dwg</td>
+  <td><span class="material-symbols-outlined dots-details">more_horiz</span></td>
+  <td>Tamaño</td>
+  <td>hace 10 días</td>
+  <td><span class="material-symbols-outlined">delete_forever</span></td>
+</tr> */
+}

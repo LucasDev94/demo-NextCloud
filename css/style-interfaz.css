@@ -292,7 +292,7 @@ body.contain {
 .main-content-docs > .docs > .docs-title > tr {
   width: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 7fr 1fr 1fr 1.5fr 2fr;
+  grid-template-columns: 0.5fr 7fr 1fr 1.5fr 2fr 1fr;
   height: 4.5rem;
   font-weight: 300;
   border-bottom: var(--border);
@@ -305,7 +305,7 @@ body.contain {
 .main-content-docs > .docs > .docs-body > tr {
   width: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 7fr 1fr 1fr 1.5fr 2fr;
+  grid-template-columns: 0.5fr 8fr 0.5fr 1.5fr 2fr 0.5fr;
   height: 5rem;
   border-bottom: var(--border);
   cursor: pointer;
@@ -351,13 +351,19 @@ body.contain {
   color: #ebc94a;
 }
 .main-content-docs > .docs > .docs-body > tr > td:nth-child(2),
-.main-content-docs > .docs > .docs-body > tr td:nth-child(6) {
+.main-content-docs > .docs > .docs-body > tr td:nth-child(5) {
   justify-content: start;
   padding-left: 8px;
 }
-.main-content-docs > .docs > .docs-body > tr > td:nth-child(5) {
+.main-content-docs > .docs > .docs-body > tr > td:nth-child(4) {
   justify-content: end;
   padding-right: 8px;
+}
+.main-content-docs > .docs > .docs-body > tr > td:nth-child(6) > span {
+  color: rgba(0, 0, 0, 0.5803921569);
+}
+.main-content-docs > .docs > .docs-body > tr > td:nth-child(6) > span:hover {
+  color: #000;
 }
 .main-content-docs > .docs > .docs-body > tr:hover {
   background-color: #f5f5f5;
@@ -512,7 +518,7 @@ body.contain {
     display: none !important;
   }
   .docs-body tr {
-    grid-template-columns: 0.5fr 7fr 1fr 1fr !important;
+    grid-template-columns: 0.5fr 6fr 1fr 1fr !important;
   }
 }
 @media (min-width: 701px) and (max-width: 900px) {
@@ -526,11 +532,14 @@ body.contain {
     display: none !important;
   }
   .docs-body tr {
-    grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr 1fr !important;
+    grid-template-columns: 0.5fr 4fr 0.5fr 1fr 0.5fr !important;
   }
 }
 @media (min-width: 901px) and (max-width: 1200px) {
   .main-navigation {
     width: 260px;
+  }
+  .docs-body tr {
+    grid-template-columns: 0.4fr 4fr 0.4fr 1fr 1.5fr 0.4fr !important;
   }
 }/*# sourceMappingURL=style-interfaz.css.map */
