@@ -35,20 +35,23 @@ createNewElement.addEventListener("submit", addNewElement);
 function addNewElement(event) {
   event.preventDefault();
 
-  const nameNewElement = document.querySelector("#name-new-element").value;
+  const inputNewElement = document.querySelector("#name-new-element");
+  const nameNewElement = inputNewElement.value
   const optionsTypeElement = document.getElementsByName("options-elements");
 
+  let valueOptionSelect = undefined;
   let optionSelect = undefined;
   for (let i = 0; i < optionsTypeElement.length; i++) {
     if (optionsTypeElement[i].checked) {
-      optionSelect = optionsTypeElement[i].value;
+      valueOptionSelect = optionsTypeElement[i].value;
+      optionSelect = optionsTypeElement[i];
       break;
     }
   }
 
   let elementToCreate = {
     name: nameNewElement,
-    type: optionSelect,
+    type: valueOptionSelect,
     size: (Math.random()*1000).toFixed(1),
     date: parseInt(Math.random()*365),
   };  
@@ -74,8 +77,8 @@ function addNewElement(event) {
     diagrama: "dwg",
   };
 
-  if (typeClassNewElement[optionSelect]) {
-    tdNameIcon.classList.add(typeClassNewElement[optionSelect]);
+  if (typeClassNewElement[valueOptionSelect]) {
+    tdNameIcon.classList.add(typeClassNewElement[valueOptionSelect]);
   }
 
   /** Objeto para agregar text al span y asi obtener el icono correspondiente ejecutando el condicional if*/
@@ -86,21 +89,28 @@ function addNewElement(event) {
     diagrama: "analytics",
   };
 
-  if (typeTextNewElement[optionSelect]){
-    tdNameIcon.innerText = typeTextNewElement[optionSelect]
+  if (typeTextNewElement[valueOptionSelect]){
+    tdNameIcon.innerText = typeTextNewElement[valueOptionSelect]
   }
 
   const tdNameP = document.createElement("p");
   let typeExtNewElement = {
-    folder: "",
-    documento: "docx",
-    present: "pptx",
-    diagrama: "dwg",
-  }
-  if (typeExtNewElement[optionSelect]){
-    tdNameP.innerText = `${elementToCreate.name}.${typeExtNewElement[optionSelect]}`;
+    folder: " ", /*Por alguna razon si el string esta vacio entonces no aparece el nombre d ela nueva carpeta*/
+    documento: ".docx",
+    present: ".pptx",
+    diagrama: ".dwg",
   }
 
+  console.log("valueOptionSelect:", valueOptionSelect);
+console.log("nameNewElement:", nameNewElement);
+console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOptionSelect]);
+
+  
+  if (typeExtNewElement[valueOptionSelect]){
+    tdNameP.innerText = `${elementToCreate.name}${typeExtNewElement[valueOptionSelect]}`;
+  }
+  console.log(elementToCreate);
+  
   /*2. Anidando elementos*/
   tdName.appendChild(tdNameIcon);  
   tdName.appendChild(tdNameP);
@@ -152,26 +162,9 @@ function addNewElement(event) {
   const tableBody = document.querySelector(".docs-body");
   tableBody.appendChild(tr);
 
+  inputNewElement.value = "";
+  optionSelect.checked = false;
   menuNewElement.classList.add("inactive")
-  // console.log(
-  //   "Creando nuevo elemento. Nombre:",
-  //   nameNewElement,
-  //   "Opción seleccionada:",
-  //   optionSelect,
-  //   "Objeto creado:",
-  //   elementToCreate,
-  //   "Revisando si a tdNameIcon se le agrego correctamente su clase:",
-  //   tdName, tdNameIcon, tdSize
-  // );
+
 }
 
-{
-  /* <tr>
-  <td><input type="checkbox"></td>
-  <td><span class="material-symbols-outlined dwg">analytics</span>ruta de evacuación.dwg</td>
-  <td><span class="material-symbols-outlined dots-details">more_horiz</span></td>
-  <td>Tamaño</td>
-  <td>hace 10 días</td>
-  <td><span class="material-symbols-outlined">delete_forever</span></td>
-</tr> */
-}
