@@ -8,13 +8,20 @@ const createNewElement = document.querySelector("#create-new-element");
 
 const tableBody = document.querySelector(".docs-body");
 
+/** Aprendiendo delegación de eventos */
+tableBody.addEventListener("click", saludarEnConsola);
+function saludarEnConsola(event){
+  console.log("Hola desde la consola")
+  console.dir(evento);
+}
+
 /* Se itera cada elemento del array, para que todos sus elementos tengan el addEventListener */
 /* Funcion para abrir el aside derecho con las propiedades del archivo*/
-optionsDetails.forEach((element) =>
+/*optionsDetails.forEach((element) =>
   element.addEventListener("click", function saludar() {
     console.log("hola");
   })
-);
+);*/
 
 /* clic sobre el boton "nuesto" para abrir el menu para crear nuevo elemento */
 buttonNewElement.addEventListener("click", openOptionsNewDocs);
