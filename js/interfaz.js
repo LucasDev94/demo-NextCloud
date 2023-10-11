@@ -20,6 +20,8 @@ optionsDetails.forEach((element) =>
 buttonNewElement.addEventListener("click", openOptionsNewDocs);
 function openOptionsNewDocs() {
   menuNewElement.classList.remove("inactive");
+  inputNewElem = document.querySelector("#name-new-element");
+  inputNewElem.focus();
 }
 
 /* Cierra el menu que crea nuevos elementos */
@@ -49,9 +51,7 @@ function addNewElement(event) {
     type: optionSelect,
     size: (Math.random()*1000).toFixed(1),
     date: parseInt(Math.random()*365),
-  };
-
-  
+  };  
 
   const tdCheckbox = document.createElement("td");
   const inputCheckbox = document.createElement("input");
@@ -90,6 +90,7 @@ function addNewElement(event) {
     tdNameIcon.innerText = typeTextNewElement[optionSelect]
   }
 
+  const tdNameP = document.createElement("p");
   let typeExtNewElement = {
     folder: "",
     documento: "docx",
@@ -97,18 +98,19 @@ function addNewElement(event) {
     diagrama: "dwg",
   }
   if (typeExtNewElement[optionSelect]){
-    tdName.innerText = `${elementToCreate.name}.${typeExtNewElement[optionSelect]}`;
+    tdNameP.innerText = `${elementToCreate.name}.${typeExtNewElement[optionSelect]}`;
   }
 
   /*2. Anidando elementos*/
   tdName.appendChild(tdNameIcon);  
+  tdName.appendChild(tdNameP);
   /****************** */
 
   const tdDetails = document.createElement("td");
   const tdIconDetails = document.createElement("span");
   tdIconDetails.classList.add("material-symbols-outlined");
   tdIconDetails.classList.add("dots-details");
-  tdIconDetails.innerText = "more_horiz"
+  tdIconDetails.innerText = "more_horiz";
 
   /* 3. Anidando elementos*/
   tdDetails.appendChild(tdIconDetails);  
@@ -149,17 +151,18 @@ function addNewElement(event) {
 
   const tableBody = document.querySelector(".docs-body");
   tableBody.appendChild(tr);
-  
-  console.log(
-    "Creando nuevo elemento. Nombre:",
-    nameNewElement,
-    "Opción seleccionada:",
-    optionSelect,
-    "Objeto creado:",
-    elementToCreate,
-    "Revisando si a tdNameIcon se le agrego correctamente su clase:",
-    tdName, tdNameIcon, tdSize
-  );
+
+  menuNewElement.classList.add("inactive")
+  // console.log(
+  //   "Creando nuevo elemento. Nombre:",
+  //   nameNewElement,
+  //   "Opción seleccionada:",
+  //   optionSelect,
+  //   "Objeto creado:",
+  //   elementToCreate,
+  //   "Revisando si a tdNameIcon se le agrego correctamente su clase:",
+  //   tdName, tdNameIcon, tdSize
+  // );
 }
 
 {

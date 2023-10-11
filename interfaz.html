@@ -75,12 +75,12 @@
                   </div>
                   <div class="input-name-new-element">
                     <h4>ingresa el nombre</h4>
-                    <input type="text" id="name-new-element">
+                    <input type="text" id="name-new-element" required>
                   </div>
                   <div class="options-new-elements">
                     <h4>Escoja el tipo de elemento</h4>
                     <label for="opt-folder"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="folder" id="opt-folder"><span class="material-symbols-outlined">folder</span>Nueva Carpeta</label>
-                    <label for="opt-docx"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="documento" id="opt-docx"><span class="material-symbols-outlined">description</span>Nuevo archivo de texto</label>
+                    <label for="opt-docx"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="documento" id="opt-docx" required><span class="material-symbols-outlined">description</span>Nuevo archivo de texto</label>
                     <label for="opt-pptx"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="present" id="opt-pptx"><span class="material-symbols-outlined">stay_primary_landscape</span>Nuevo presentación</label>
                     <label for="opt-dwg"><input type="radio" class="main-content-bar-left-new-menu-item" name="options-elements" value="diagrama" id="opt-dwg"><span class="material-symbols-outlined">analytics</span>Nuevo diagrama</label>             
                                        
@@ -89,7 +89,7 @@
                     <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">stay_primary_landscape</span>Nuevo presentación</li>
                     <li class="main-content-bar-left-new-menu-item"><span class="material-symbols-outlined">analytics</span>Nuevo diagrama</li> -->
                   </div>
-                  <input type="submit" name="" class="create-new-element">
+                  <input type="submit" name="" class="create-new-element" value="Crear">
                 </form>
               </div>
             </div>
@@ -111,7 +111,7 @@
             <tbody class="docs-body">
               <tr>
                 <td><input type="checkbox"></td>
-                <td><span class="material-symbols-outlined folder">folder</span>Documentación tecnica</td>
+                <td><span class="material-symbols-outlined folder">folder</span><p>Documentación tecnica</p></td>
                 <td><span class="material-symbols-outlined dots-details">more_horiz</span></td>
                 <td>Tamaño</td>
                 <td>Modificado</td>

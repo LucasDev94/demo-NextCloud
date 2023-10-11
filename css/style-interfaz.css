@@ -314,6 +314,17 @@ body.contain {
   display: flex;
   align-items: center;
   justify-content: center;
+  /*& > p {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #0082c9;
+    background-color: rgb(192, 236, 238);
+  }*/
 }
 .main-content-docs > .docs > .docs-body > tr > td > .material-symbols-outlined {
   font-size: 3rem;
@@ -326,17 +337,6 @@ body.contain {
 }
 .main-content-docs > .docs > .docs-body > tr > td > span {
   margin-right: 8px;
-}
-.main-content-docs > .docs > .docs-body > tr > td > p {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  color: #0082c9;
-  background-color: rgb(192, 236, 238);
 }
 .main-content-docs > .docs > .docs-body > tr > td > .folder {
   color: #0082c9;
