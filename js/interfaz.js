@@ -47,14 +47,19 @@ function addNewElement(event) {
   let elementToCreate = {
     name: nameNewElement,
     type: optionSelect,
-    date: new Date(),
+    size: (Math.random()*1000).toFixed(1),
+    date: parseInt(Math.random()*365),
   };
 
-  const tr = document.createElement("tr");
+  
 
   const tdCheckbox = document.createElement("td");
   const inputCheckbox = document.createElement("input");
   inputCheckbox.setAttribute("type", "checkbox");
+
+  /*1. Anidando elementos*/
+  tdCheckbox.appendChild(inputCheckbox);
+  /******************* */
 
   const tdName = document.createElement("td");
   const tdNameIcon = document.createElement("span");
@@ -73,7 +78,7 @@ function addNewElement(event) {
     tdNameIcon.classList.add(typeClassNewElement[optionSelect]);
   }
 
-  /** Objeto para agregar text al span y asi obtener el icono correspondiente */
+  /** Objeto para agregar text al span y asi obtener el icono correspondiente ejecutando el condicional if*/
   let typeTextNewElement = {
     folder: "folder",
     documento: "description",
@@ -85,6 +90,66 @@ function addNewElement(event) {
     tdNameIcon.innerText = typeTextNewElement[optionSelect]
   }
 
+  let typeExtNewElement = {
+    folder: "",
+    documento: "docx",
+    present: "pptx",
+    diagrama: "dwg",
+  }
+  if (typeExtNewElement[optionSelect]){
+    tdName.innerText = `${elementToCreate.name}.${typeExtNewElement[optionSelect]}`;
+  }
+
+  /*2. Anidando elementos*/
+  tdName.appendChild(tdNameIcon);  
+  /****************** */
+
+  const tdDetails = document.createElement("td");
+  const tdIconDetails = document.createElement("span");
+  tdIconDetails.classList.add("material-symbols-outlined");
+  tdIconDetails.classList.add("dots-details");
+  tdIconDetails.innerText = "more_horiz"
+
+  /* 3. Anidando elementos*/
+  tdDetails.appendChild(tdIconDetails);  
+  /****************** */
+
+  const tdSize = document.createElement("td");
+  tdSize.innerText = `${elementToCreate.size} KB`
+
+  /* 4. Anidando elementos*/
+  //
+  /****************** */
+
+  const tdDateCreate = document.createElement("td");
+  tdDateCreate.innerText = `hace ${elementToCreate.date} días`
+
+  /* 5.Anidando elementos*/
+  //
+  /****************** */
+  
+  const tdDelete = document.createElement("td");
+  const tdDeleteIcon = document.createElement("span");
+  tdDeleteIcon.classList.add("material-symbols-outlined");
+  tdDeleteIcon.innerText = "delete_forever";
+  
+  /* 6.Anidando elementos*/
+  tdDelete.appendChild(tdDeleteIcon)  
+  /****************** */
+
+  const tr = document.createElement("tr");
+  /*Anidando elementos*/
+    tr.appendChild(tdCheckbox);
+    tr.appendChild(tdName);
+    tr.appendChild(tdDetails);
+    tr.appendChild(tdSize);
+    tr.appendChild(tdDateCreate);
+    tr.appendChild(tdDelete)
+  /****************** */
+
+  const tableBody = document.querySelector(".docs-body");
+  tableBody.appendChild(tr);
+  
   console.log(
     "Creando nuevo elemento. Nombre:",
     nameNewElement,
@@ -93,7 +158,7 @@ function addNewElement(event) {
     "Objeto creado:",
     elementToCreate,
     "Revisando si a tdNameIcon se le agrego correctamente su clase:",
-    tdNameIcon
+    tdName, tdNameIcon, tdSize
   );
 }
 
