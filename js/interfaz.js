@@ -8,20 +8,26 @@ const createNewElement = document.querySelector("#create-new-element");
 
 const tableBody = document.querySelector(".docs-body");
 
-/** Aprendiendo delegación de eventos */
-tableBody.addEventListener("click", saludarEnConsola);
-function saludarEnConsola(event){
-  console.log("Hola desde la consola")
-  console.dir(evento);
+
+/** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
+tableBody.addEventListener("click", openDetails);
+function openDetails(event){
+  // console.log("Hola desde la consola")
+  //console.dir(event);
+  if (event.target.classList.contains("dots-details")){
+    details.classList.toggle("inactive")
+  }
 }
 
-/* Se itera cada elemento del array, para que todos sus elementos tengan el addEventListener */
-/* Funcion para abrir el aside derecho con las propiedades del archivo*/
-/*optionsDetails.forEach((element) =>
-  element.addEventListener("click", function saludar() {
-    console.log("hola");
-  })
-);*/
+/** Eliminar elemento */
+tableBody.addEventListener("click", deleteElement)
+function deleteElement(event){
+  if (event.target.classList.contains("delete-element")){
+    let trElement = event.target.parentElement.parentElement
+    //console.log(trElement)
+    tableBody.removeChild(trElement)
+  }
+}
 
 /* clic sobre el boton "nuesto" para abrir el menu para crear nuevo elemento */
 buttonNewElement.addEventListener("click", openOptionsNewDocs);
@@ -108,9 +114,9 @@ function addNewElement(event) {
     diagrama: ".dwg",
   }
 
-  console.log("valueOptionSelect:", valueOptionSelect);
-console.log("nameNewElement:", nameNewElement);
-console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOptionSelect]);
+  //console.log("valueOptionSelect:", valueOptionSelect);
+  //console.log("nameNewElement:", nameNewElement);
+  //console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOptionSelect]);
 
   
   if (typeExtNewElement[valueOptionSelect]){
@@ -150,6 +156,7 @@ console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOpti
   const tdDelete = document.createElement("td");
   const tdDeleteIcon = document.createElement("span");
   tdDeleteIcon.classList.add("material-symbols-outlined");
+  tdDeleteIcon.classList.add("delete-element")
   tdDeleteIcon.innerText = "delete_forever";
   
   /* 6.Anidando elementos*/
@@ -174,4 +181,6 @@ console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOpti
   menuNewElement.classList.add("inactive")
 
 }
+
+/** Eliminar elemento */
 
