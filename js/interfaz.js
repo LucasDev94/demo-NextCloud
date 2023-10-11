@@ -8,22 +8,27 @@ const createNewElement = document.querySelector("#create-new-element");
 
 const tableBody = document.querySelector(".docs-body");
 
+/* Se itera cada elemento del array, para que todos sus elementos tengan el addEventListener */
+/* Funcion para abrir el aside derecho con las propiedades del archivo*/
 optionsDetails.forEach((element) =>
   element.addEventListener("click", function saludar() {
     console.log("hola");
   })
 );
 
+/* clic sobre el boton "nuesto" para abrir el menu para crear nuevo elemento */
 buttonNewElement.addEventListener("click", openOptionsNewDocs);
 function openOptionsNewDocs() {
   menuNewElement.classList.remove("inactive");
 }
 
+/* Cierra el menu que crea nuevos elementos */
 closeMenuNewElement.addEventListener("click", closeMenuCreateNewElement);
 function closeMenuCreateNewElement() {
   menuNewElement.classList.add("inactive");
 }
 
+/* Funcion para crear elementos y agregarlos al main-content */
 createNewElement.addEventListener("submit", addNewElement);
 function addNewElement (event){
   event.preventDefault();
