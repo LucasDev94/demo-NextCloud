@@ -329,6 +329,11 @@ body.contain {
 .main-content-docs > .docs > .docs-body > tr > td > .material-symbols-outlined {
   font-size: 3rem;
 }
+.main-content-docs > .docs > .docs-body > tr > td > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .main-content-docs > .docs > .docs-body > tr > td > input {
   opacity: 0.3;
   height: 1.4rem;
@@ -509,12 +514,12 @@ body.contain {
   .main-navigation {
     display: none;
   }
-  th:nth-child(5),
-  th:nth-child(6) {
+  th:nth-child(4),
+  th:nth-child(5) {
     display: none !important;
   }
-  td:nth-child(5),
-  td:nth-child(6) {
+  td:nth-child(4),
+  td:nth-child(5) {
     display: none !important;
   }
   .docs-body tr {
@@ -531,15 +536,18 @@ body.contain {
   td:nth-child(5) {
     display: none !important;
   }
-  .docs-body tr {
-    grid-template-columns: 0.5fr 4fr 0.5fr 1fr 0.5fr !important;
+  .main-content-docs > .docs > .docs-body tr {
+    grid-template-columns: 0.5fr 4fr 0.5fr 1fr 0.5fr;
   }
 }
 @media (min-width: 901px) and (max-width: 1200px) {
   .main-navigation {
-    width: 260px;
+    width: 240px;
   }
-  .docs-body tr {
-    grid-template-columns: 0.4fr 4fr 0.4fr 1fr 1.5fr 0.4fr !important;
+  .main-details {
+    flex: 1.5;
+  }
+  .main-content-docs > .docs > .docs-body tr {
+    grid-template-columns: 0.4fr 3.5fr 0.4fr 1fr 1fr 0.4fr;
   }
 }/*# sourceMappingURL=style-interfaz.css.map */
