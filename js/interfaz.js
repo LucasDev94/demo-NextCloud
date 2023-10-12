@@ -48,9 +48,9 @@ function openDetails(event) {
     trElements.forEach((trElem) => {
       trElem.style.gridTemplateColumns = "0.4fr 3fr 0.5fr 0.5fr";
     });
-
-  } else {
-
+  } 
+  
+  if (mediaQuery901to1200.matches && details.classList.contains("inactive")) {
     /** display: block para td de tamaño */
     tdSize.forEach((tdElmSize) => {
       tdElmSize.classList.remove("inactive");
@@ -66,19 +66,18 @@ function openDetails(event) {
     });
   }
 
+  
   let nameInAside = document.querySelector(".main-details-title-name h3");
-
   /** Usando el event que se imprime en la consolo se navego por sus propiedades hasta encontrar el segundo td, ahi con querySelector se selecciono el p y luego se contenido */
-  let tdPText = event.target.parentElement.parentElement.children[1].querySelector("p").textContent;
+  /** nombre del elemento */
+  let tdPText =
+    event.target.parentElement.parentElement.children[1].querySelector(
+      "p"
+    ).textContent;
   console.log(tdPText);
   nameInAside.innerText = tdPText;
-  
-  
-  
-  /*
-  let tdNameElemts = document.querySelectorAll(".docs-body tr td:nth-child(2)");
-  console.log(nameInAside)
-  */
+
+      
 }
 
 /** Eliminar elemento */
@@ -88,6 +87,11 @@ function deleteElement(event) {
     let trElement = event.target.parentElement.parentElement;
     //console.log(trElement)
     tableBody.removeChild(trElement);
+
+    if (!details.classList.contains("inactive")) {
+      details.classList.add("inactive");
+      //console.log("hola");
+    }
   }
 }
 
