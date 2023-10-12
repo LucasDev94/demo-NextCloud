@@ -65,6 +65,20 @@ function openDetails(event) {
       trElem.style.gridTemplateColumns = "0.4fr 4fr 0.4fr 0.7fr 1fr 0.4fr";
     });
   }
+
+  let nameInAside = document.querySelector(".main-details-title-name h3");
+
+  /** Usando el event que se imprime en la consolo se navego por sus propiedades hasta encontrar el segundo td, ahi con querySelector se selecciono el p y luego se contenido */
+  let tdPText = event.target.parentElement.parentElement.children[1].querySelector("p").textContent;
+  console.log(tdPText);
+  nameInAside.innerText = tdPText;
+  
+  
+  
+  /*
+  let tdNameElemts = document.querySelectorAll(".docs-body tr td:nth-child(2)");
+  console.log(nameInAside)
+  */
 }
 
 /** Eliminar elemento */

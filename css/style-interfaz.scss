@@ -597,7 +597,8 @@ body.contain {
               display: flex;
               align-items: center;
 
-              & > .material-symbols-outlined {
+              & > .material-symbols-outli
+              ned {
                 height: 35px;
                 width: 35px;
                 border-radius: 50%;
@@ -605,6 +606,15 @@ body.contain {
                 display: grid;
                 place-content: center;
                 margin-right: 8px;
+              }
+            }
+
+            & > .material-symbols-outlined{
+              cursor: pointer;
+
+              &:hover{
+                background-color: var(--background-button);
+                border-radius: 50%;
               }
             }
           }

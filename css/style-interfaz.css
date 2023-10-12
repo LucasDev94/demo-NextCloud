@@ -461,7 +461,7 @@ body.contain {
   display: flex;
   align-items: center;
 }
-.main-details-share-list > .links > .publicLink > div > .material-symbols-outlined {
+.main-details-share-list > .links > .publicLink > div > .material-symbols-outli ned {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -469,6 +469,13 @@ body.contain {
   display: grid;
   place-content: center;
   margin-right: 8px;
+}
+.main-details-share-list > .links > .publicLink > .material-symbols-outlined {
+  cursor: pointer;
+}
+.main-details-share-list > .links > .publicLink > .material-symbols-outlined:hover {
+  background-color: var(--background-button);
+  border-radius: 50%;
 }
 .main-details-share-list > .links > .owner {
   display: flex;
