@@ -9,15 +9,15 @@ const createNewElement = document.querySelector("#create-new-element");
 const tableBody = document.querySelector(".docs-body");
 
 /** Aprendiendo de manejo de mediaQuery desde JS */
-const mediaQuery901to1200 = window.matchMedia(
-  "(min-width: 901px) and (max-width: 1200px)"
-);
+const mediaQuery901to1200 = window.matchMedia("(min-width: 901px) and (max-width: 1200px)");
+const mediaQuery1201to1400 = window.matchMedia("(min-width: 1201px) and (max-width: 1400px")
+const mediaQuery1401to1600 = window.matchMedia("(min-width: 1401px) and (max-width: 1600px)");
 
 /** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
 tableBody.addEventListener("click", openDetails);
 function openDetails(event) {
   // console.log("Hola desde la consola")
-  console.dir(event);
+  //console.dir(event);
 
   /** Abre el aside de detalles */
   if (event.target.classList.contains("dots-details")) {
@@ -62,22 +62,60 @@ function openDetails(event) {
     });
 
     trElements.forEach((trElem) => {
-      trElem.style.gridTemplateColumns = "0.4fr 4fr 0.4fr 0.7fr 1fr 0.4fr";
+      //trElem.style.gridTemplateColumns = "0.4fr 4fr 0.4fr 0.7fr 1fr 0.4fr";
+      trElem.removeAttribute("style")
     });
+
+  }
+  
+  if(mediaQuery1201to1400.matches && !details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      trElem.style.gridTemplateColumns = "0.5fr 4fr 0.5fr 1.3fr 1.5fr 0.5fr"
+    })
+    //console.log("Estoy en pantalla mayor a 1201px")
   }
 
+  if (mediaQuery1201to1400.matches && details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      trElem.style.gridTemplateColumns = "0.5fr 8fr 0.5fr 1.5fr 2fr 0.5fr";
+      trElem.removeAttribute("style")
+    })
+  }
   
-  let nameInAside = document.querySelector(".main-details-title-name h3");
+  if(mediaQuery1401to1600.matches && !details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      trElem.style.gridTemplateColumns = "0.4fr 4fr 0.35fr 1fr 1fr 0.4fr"
+    })
+  }
+
+  if(mediaQuery1401to1600.matches && details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      //trElem.style.gridTemplateColumns = "0.4fr 7fr 0.4fr 1fr 1fr 0.4fr"
+      trElem.removeAttribute("style")
+    })
+  }
+  
   /** Usando el event que se imprime en la consolo se navego por sus propiedades hasta encontrar el segundo td, ahi con querySelector se selecciono el p y luego se contenido */
-  /** nombre del elemento */
-  let tdPText =
-    event.target.parentElement.parentElement.children[1].querySelector(
-      "p"
-    ).textContent;
-  console.log(tdPText);
+
+  /** Icono del elemento para llevarlo al aside */
+  let iconInAside = document.querySelector(".main-details-title-icon span");
+  let tdIconElm = event.target.parentElement.parentElement.children[1].querySelector("span").textContent;
+  iconInAside.innerText = tdIconElm;
+
+  /** nombre del elemento para pasarlo al aside*/
+  let nameInAside = document.querySelector(".main-details-title-name h3");
+  let tdPText = event.target.parentElement.parentElement.children[1].querySelector("p").textContent;
   nameInAside.innerText = tdPText;
 
-      
+  /** Seleccionando el tamaño de cada elemento para pasarlo al aside de details */
+  let sizeInAside = document.querySelector(".size span");  
+  let tdSizeValue = event.target.parentElement.parentElement.children[3].textContent;
+  sizeInAside.innerText = tdSizeValue;
+
+  /** Seleccionando la fecha cuando fue creado y mandandola a details */
+  let dateInAside = document.querySelector(".date-create span")
+  let tdDateValue = event.target.parentElement.parentElement.children[4].textContent;
+  dateInAside.innerText = tdDateValue;
 }
 
 /** Eliminar elemento */
@@ -101,6 +139,10 @@ function openOptionsNewDocs() {
   menuNewElement.classList.remove("inactive");
   inputNewElem = document.querySelector("#name-new-element");
   inputNewElem.focus();
+
+  if (!details.classList.contains("inactive")){
+    details.classList.add("inactive")
+  }
 }
 
 /* Cierra el menu que crea nuevos elementos */
@@ -247,4 +289,40 @@ function addNewElement(event) {
   menuNewElement.classList.add("inactive");
 }
 
-/** Eliminar elemento */
+const iconCloseDetails = document.querySelector(".icon-close");
+
+iconCloseDetails.addEventListener("click", closeAsideDetails)
+
+function closeAsideDetails(){
+  if (!details.classList.contains("inactive")){
+    details.classList.add("inactive")
+
+    /** Cambia el tamaño del td del nombre para una mejor visualización */
+    let trElements = document.querySelectorAll(".docs-body tr");
+    let tdSize = document.querySelectorAll(".docs-body tr td:nth-child(4)");
+    let tdModify = document.querySelectorAll(".docs-body tr td:nth-child(5)");
+  
+    if (mediaQuery901to1200.matches && details.classList.contains("inactive")) {
+      /** display: block para td de tamaño */
+      tdSize.forEach((tdElmSize) => {
+        tdElmSize.classList.remove("inactive");
+      });
+  
+      /** display: block para td de modificado */
+      tdModify.forEach((tdMdElem) => {
+        tdMdElem.classList.remove("inactive");
+      });
+  
+      trElements.forEach((trElem) => {
+        trElem.style.gridTemplateColumns = "0.4fr 4fr 0.4fr 0.7fr 1fr 0.4fr";
+      });
+    }
+  }
+}
+
+const generateLink = document.querySelector(".generate-link");
+generateLink.addEventListener("click", genLink)
+
+function genLink(){
+  
+}

@@ -305,7 +305,7 @@ body.contain {
 .main-content-docs > .docs > .docs-body > tr {
   width: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 8fr 0.5fr 1.5fr 2fr 0.5fr;
+  grid-template-columns: 0.5fr 17fr 0.5fr 1.5fr 2fr 0.5fr;
   height: 5rem;
   border-bottom: var(--border);
   cursor: pointer;
@@ -397,6 +397,7 @@ body.contain {
 }
 .main-details-title-icon span:nth-child(2) {
   background-color: var(--background-button);
+  color: #fff;
   padding: 0;
   margin: 0;
   font-size: 2rem;
@@ -413,7 +414,10 @@ body.contain {
 .main-details-title-name {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+}
+.main-details-title .icon-close {
+  cursor: pointer;
+  background: none;
 }
 .main-details-menu {
   display: flex;
@@ -457,15 +461,16 @@ body.contain {
   align-items: center;
   margin-bottom: 12px;
 }
-.main-details-share-list > .links > .publicLink > div {
+.main-details-share-list > .links > .publicLink > div:nth-child(1) {
   display: flex;
   align-items: center;
 }
-.main-details-share-list > .links > .publicLink > div > .material-symbols-outli ned {
+.main-details-share-list > .links > .publicLink > div:nth-child(1) > .material-symbols-outlined {
   height: 35px;
   width: 35px;
   border-radius: 50%;
   background-color: #006aa3;
+  color: var(--color-primary-element-text);
   display: grid;
   place-content: center;
   margin-right: 8px;
@@ -556,5 +561,29 @@ body.contain {
   }
   .main-content-docs > .docs > .docs-body tr {
     grid-template-columns: 0.4fr 3.5fr 0.4fr 1fr 1fr 0.4fr;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
+  /*.main-navigation {
+    width: 240px;
+    //background-color: #929292 !important;
+  }*/
+  .main-details {
+    flex: 1;
+  }
+  .main-content-docs > .docs > .docs-body tr {
+    grid-template-columns: 0.4fr 6.5fr 0.4fr 1fr 1fr 0.4fr;
+  }
+}
+@media (min-width: 1401px) and (max-width: 1600px) {
+  /*.main-navigation {
+    width: 240px;
+    //background-color: #929292 !important;
+  }*/
+  .main-details {
+    flex: 0.85;
+  }
+  .main-content-docs > .docs > .docs-body tr {
+    grid-template-columns: 0.4fr 7fr 0.4fr 1fr 1fr 0.4fr;
   }
 }/*# sourceMappingURL=style-interfaz.css.map */
