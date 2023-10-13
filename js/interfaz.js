@@ -345,7 +345,7 @@ function closeAsideDetails(){
 //const generateLink = document.querySelector(".publicLink");
 generateLink.addEventListener("click", genLink);
 
-function genLink(event) {
+function genLink() {
   thanksGenerateLink.classList.toggle("inactive");
 
   let iconAdd = document.querySelector(".generate-link");
@@ -363,3 +363,5 @@ function genLink(event) {
     //Creo que falta pulir la funcion
   }
 }
+
+
