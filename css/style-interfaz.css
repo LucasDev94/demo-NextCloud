@@ -475,10 +475,10 @@ body.contain {
   place-content: center;
   margin-right: 8px;
 }
-.main-details-share-list > .links > .publicLink > .material-symbols-outlined {
+.main-details-share-list > .links > .publicLink .generate-link {
   cursor: pointer;
 }
-.main-details-share-list > .links > .publicLink > .material-symbols-outlined:hover {
+.main-details-share-list > .links > .publicLink .generate-link:hover {
   background-color: var(--background-button);
   border-radius: 50%;
 }
@@ -516,6 +516,16 @@ body.contain {
 .main-details-share-list > .links > .thanks > p > span {
   font-size: 5rem;
   margin-bottom: 8px;
+}
+
+.rotate {
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
+
+.rotate-reset {
+  transform: none;
+  transition: 0.4s;
 }
 
 .inactive {

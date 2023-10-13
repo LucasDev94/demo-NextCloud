@@ -1,5 +1,7 @@
 const optionsDetails = document.querySelectorAll(".dots-details");
 const details = document.querySelector(".main-details");
+const thanksGenerateLink = document.querySelector(".thanks-generate-link");
+const generateLink = document.querySelector(".publicLink");
 
 const buttonNewElement = document.querySelector("#new-element");
 const menuNewElement = document.querySelector(".menu-new-elements");
@@ -12,6 +14,8 @@ const tableBody = document.querySelector(".docs-body");
 const mediaQuery901to1200 = window.matchMedia("(min-width: 901px) and (max-width: 1200px)");
 const mediaQuery1201to1400 = window.matchMedia("(min-width: 1201px) and (max-width: 1400px")
 const mediaQuery1401to1600 = window.matchMedia("(min-width: 1401px) and (max-width: 1600px)");
+const mediaQuery1601toUP = window.matchMedia("(min-width: 1601px)");
+
 
 /** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
 tableBody.addEventListener("click", openDetails);
@@ -94,6 +98,21 @@ function openDetails(event) {
       trElem.removeAttribute("style")
     })
   }
+
+  if(mediaQuery1601toUP.matches && !details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      trElem.style.gridTemplateColumns = "0.6fr 11fr 0.5fr 1.5fr 1.5fr 0.6fr"
+    })
+  }
+
+  if(mediaQuery1601toUP.matches && details.classList.contains("inactive")){
+    trElements.forEach((trElem) => {
+      //trElem.style.gridTemplateColumns = "0.4fr 7fr 0.4fr 1fr 1fr 0.4fr"
+      trElem.removeAttribute("style")
+    })
+  }
+
+  //0.6fr 11fr 0.5fr 1.5fr 1.5fr 0.6fr
   
   /** Usando el event que se imprime en la consolo se navego por sus propiedades hasta encontrar el segundo td, ahi con querySelector se selecciono el p y luego se contenido */
 
@@ -150,6 +169,9 @@ closeMenuNewElement.addEventListener("click", closeMenuCreateNewElement);
 function closeMenuCreateNewElement() {
   menuNewElement.classList.add("inactive");
 }
+
+/** Generar link */
+
 
 /* Funcion para crear elementos y agregarlos al main-content */
 createNewElement.addEventListener("submit", addNewElement);
@@ -320,9 +342,24 @@ function closeAsideDetails(){
   }
 }
 
-const generateLink = document.querySelector(".generate-link");
-generateLink.addEventListener("click", genLink)
+//const generateLink = document.querySelector(".publicLink");
+generateLink.addEventListener("click", genLink);
 
-function genLink(){
-  
+function genLink(event) {
+  thanksGenerateLink.classList.toggle("inactive");
+
+  let iconAdd = document.querySelector(".generate-link");
+
+  if (!iconAdd.classList.contains("rotate")) {
+    iconAdd.classList.add("rotate");
+  } else {
+    iconAdd.classList.remove("rotate");
+    iconAdd.classList.add("rotate-reset");
+  }
+
+  if(iconAdd.classList.contains("rotate-reset")){
+    iconAdd.classList.remove("rotate-reset");
+    //iconAdd.classList.add("rotate");
+    //Creo que falta pulir la funcion
+  }
 }

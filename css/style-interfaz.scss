@@ -616,7 +616,7 @@ body.contain {
               }
             }
 
-            & > .material-symbols-outlined{
+            &  .generate-link{
               cursor: pointer;
 
               &:hover{
@@ -673,6 +673,16 @@ body.contain {
       }
     }
   }
+}
+
+.rotate{
+  transform: rotate(45deg);
+  transition: .4s;
+}
+
+.rotate-reset{
+  transform: none;
+  transition: .4s;
 }
 
 .inactive {
