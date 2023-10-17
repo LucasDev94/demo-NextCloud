@@ -1,7 +1,7 @@
 const optionsDetails = document.querySelectorAll(".dots-details");
 const details = document.querySelector(".main-details");
 const thanksGenerateLink = document.querySelector(".thanks-generate-link");
-const generateLink = document.querySelector(".publicLink");
+const generateLink = document.querySelector(".generate-link");
 
 const buttonNewElement = document.querySelector("#new-element");
 const menuNewElement = document.querySelector(".menu-new-elements");
@@ -342,26 +342,11 @@ function closeAsideDetails(){
   }
 }
 
-//const generateLink = document.querySelector(".publicLink");
+//const generateLink = document.querySelector(".generate-link");
 generateLink.addEventListener("click", genLink);
 
-function genLink() {
+function genLink (){
   thanksGenerateLink.classList.toggle("inactive");
-
-  let iconAdd = document.querySelector(".generate-link");
-
-  if (!iconAdd.classList.contains("rotate")) {
-    iconAdd.classList.add("rotate");
-  } else {
-    iconAdd.classList.remove("rotate");
-    iconAdd.classList.add("rotate-reset");
-  }
-
-  if(iconAdd.classList.contains("rotate-reset")){
-    iconAdd.classList.remove("rotate-reset");
-    //iconAdd.classList.add("rotate");
-    //Creo que falta pulir la funcion
-  }
+  generateLink.classList.toggle("rotate");
+  generateLink.classList.toggle("rotate-reset");
 }
-
-
