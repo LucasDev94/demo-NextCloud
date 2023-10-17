@@ -21,6 +21,14 @@ const mediaQuery1201to1400 = window.matchMedia("(min-width: 1201px) and (max-wid
 const mediaQuery1401to1600 = window.matchMedia("(min-width: 1401px) and (max-width: 1600px)");
 const mediaQuery1601toUP = window.matchMedia("(min-width: 1601px)");
 
+const showActivity = document.querySelector(".show-activity");
+const showLinks = document.querySelector(".show-links");
+const showVersions = document.querySelector(".show-versions");
+
+const activity = document.querySelector(".activity");
+const links = document.querySelector(".links");
+const versions = document.querySelector(".versions");
+
 
 /** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
 tableBody.addEventListener("click", openDetails);
@@ -140,6 +148,11 @@ function openDetails(event) {
   let dateInAside = document.querySelector(".date-create span")
   let tdDateValue = event.target.parentElement.parentElement.children[4].textContent;
   dateInAside.innerText = tdDateValue;
+
+  /** Para borrar busquedas anteriores en el apartado de compartir informacion con una persona en especifico */
+  nameSharePeople.value = "";
+  findPeople.classList.add("inactive");
+  errorFindPeople.classList.add("inactive");
 }
 
 /** Eliminar elemento */
@@ -347,6 +360,69 @@ function closeAsideDetails(){
   }
 }
 
+/** Navega entre los menus de details */
+// const showActivity = document.querySelector(".show-activity");
+// const showLinks = document.querySelector(".show-links");
+// const showVersions = document.querySelector(".show-versions");
+
+// const activity = document.querySelector(".activity");
+// const links = document.querySelector(".links");
+// const versions = document.querySelector(".versions");
+
+showActivity.addEventListener("click", showDetailActivity)
+function showDetailActivity(){
+  activity.classList.remove("inactive");
+  
+  showActivity.classList.add("item-focus");
+  if(showLinks.classList.contains("item-focus") || showVersions.classList.contains("item-focus")){
+    showLinks.classList.remove("item-focus");
+    showVersions.classList.remove("item-focus");
+  }
+  
+  if(!links.classList.contains("inactive")){
+    links.classList.add("inactive")
+  }
+  if(!versions.classList.contains("inactive")){
+    versions.classList.add("inactive")
+  }
+}
+
+showLinks.addEventListener("click", showDetailLinks)
+function showDetailLinks(){
+  links.classList.remove("inactive");
+  showLinks.classList.add("item-focus");
+  if(showActivity.classList.contains("item-focus") || showVersions.classList.contains("item-focus")){
+    showActivity.classList.remove("item-focus");
+    showVersions.classList.remove("item-focus");
+  }
+  
+  if(!activity.classList.contains("inactive")){
+    activity.classList.add("inactive")
+  }
+  if(!versions.classList.contains("inactive")){
+    versions.classList.add("inactive")
+  }
+}
+
+showVersions.addEventListener("click", showDetailversions)
+function showDetailversions(){
+  versions.classList.remove("inactive");
+
+  showVersions.classList.add("item-focus");
+  if(showLinks.classList.contains("item-focus") || showActivity.classList.contains("item-focus")){
+    showLinks.classList.remove("item-focus");
+    showActivity.classList.remove("item-focus");
+  }
+  
+  if(!activity.classList.contains("inactive")){
+    activity.classList.add("inactive")
+  }
+  if(!links.classList.contains("inactive")){
+    links.classList.add("inactive")
+  }
+}
+
+
 //const generateLink = document.querySelector(".generate-link");
 generateLink.addEventListener("click", genLink);
 
@@ -387,3 +463,4 @@ closeTextFindPeople.addEventListener("click", closeMesFindPeople);
 function closeMesFindPeople () {
   findPeople.classList.add("inactive")
 }
+
