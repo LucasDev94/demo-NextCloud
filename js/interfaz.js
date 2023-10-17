@@ -2,6 +2,11 @@ const optionsDetails = document.querySelectorAll(".dots-details");
 const details = document.querySelector(".main-details");
 const thanksGenerateLink = document.querySelector(".thanks-generate-link");
 const generateLink = document.querySelector(".generate-link");
+const sharePeople = document.querySelector(".share-people");
+const nameSharePeople = document.querySelector(".nameToFind");
+const errorFindPeople = document.querySelector(".error-find-people");
+const findPeople = document.querySelector(".find-people");
+const closeTextFindPeople = document.querySelector(".close-find-people");
 
 const buttonNewElement = document.querySelector("#new-element");
 const menuNewElement = document.querySelector(".menu-new-elements");
@@ -349,4 +354,36 @@ function genLink (){
   thanksGenerateLink.classList.toggle("inactive");
   generateLink.classList.toggle("rotate");
   generateLink.classList.toggle("rotate-reset");
+}
+
+
+//const sharePeople = document.querySelector(".share-people");
+//const findPeople = document.querySelector(".find-people");
+//const namesharePeople = document.querySelector(".nameToFind");
+//const errorFindPeople = document.querySelector(".error-find-people");
+
+sharePeople.addEventListener("submit", showLinksPeople)
+
+function showLinksPeople(event){
+  event.preventDefault();
+  const reGexFindPeople = /^@([a-zA-Z0-9]){1,20}$/;
+  if (reGexFindPeople.test(nameSharePeople.value)){
+    //console.log("Hola")
+    findPeople.classList.remove("inactive");
+    if(!errorFindPeople.classList.contains("inactive")){
+      errorFindPeople.classList.add("inactive")
+    }
+  } else {
+    if(!findPeople.classList.contains("inactive")){
+      findPeople.classList.add("inactive")
+    }
+    errorFindPeople.classList.remove("inactive");
+  }
+}
+
+//const closeTextFindPeople = document.querySelector(".close-find-people");
+closeTextFindPeople.addEventListener("click", closeMesFindPeople);
+
+function closeMesFindPeople () {
+  findPeople.classList.add("inactive")
 }

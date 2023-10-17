@@ -575,8 +575,7 @@ body.contain {
         //ul
         //background-color: bisque;
 
-        &-item {
-          //li
+        &-item {//li
           //background-color: cadetblue;
           display: flex;
           flex-direction: column;
@@ -645,28 +644,80 @@ body.contain {
           & > .thanks {
             //background: rgb(211, 126, 126);
 
-            & > input {
-              width: 100%;
-              padding: 10px 8px;
-              border-radius: 8px;
-              border: 2px solid #a8a8a8;
-              margin-bottom: 8px;
+            & > form{
+              display: flex;
+              align-items: center;
             }
 
-            & > p {
+            & input:nth-child(1) {
+              //width: 100%;
+              flex: 3;
+              padding: 10px 8px;
+              border-radius: 8px 0 0 8px;
               border: 2px solid #a8a8a8;
-              border-radius: 8px;
+              border-right: none;
+              //margin-bottom: 8px;
+
+              &:focus{
+                outline: none;
+              }
+            }
+
+            & input:nth-child(2) {
+              flex: 1;
+              padding: 10px 8px;
+              border-radius: 0px 8px 8px 0;
+              border: 2px solid #a8a8a8;
+              border-left: none;
+              background: #0082c8;
+              color: var(--color-primary-element-text);
+            }
+            
+            .find-people{
+              //background: #49abea;
+              margin-top: 16px;
               display: flex;
               flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-              padding: 8px;
+              padding: 12px;
+              border: 2px solid #a8a8a8;
+              border-radius: 8px;
 
-              & > span {
+              & > span:nth-child(1) {
                 font-size: 5rem;
                 margin-bottom: 8px;
               }
+
+              .close-find-people{
+                position: absolute;
+                right: 20px;
+                cursor: pointer;
+                opacity: .7;
+              }
+            }
+
+            .error-find-people{
+              //background-color: rosybrown;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #e9322d;
+            }
+          }
+
+          .thanks-generate-link {
+            border: 2px solid #a8a8a8;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            margin-top: 16px;
+
+            & > span {
+              font-size: 5rem;
+              margin-bottom: 8px;
             }
           }
         }

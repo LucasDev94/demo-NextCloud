@@ -496,14 +496,54 @@ body.contain {
   place-content: center;
   margin-right: 8px;
 }
-.main-details-share-list > .links > .thanks > input {
-  width: 100%;
+.main-details-share-list > .links > .thanks > form {
+  display: flex;
+  align-items: center;
+}
+.main-details-share-list > .links > .thanks input:nth-child(1) {
+  flex: 3;
   padding: 10px 8px;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
   border: 2px solid #a8a8a8;
+  border-right: none;
+}
+.main-details-share-list > .links > .thanks input:nth-child(1):focus {
+  outline: none;
+}
+.main-details-share-list > .links > .thanks input:nth-child(2) {
+  flex: 1;
+  padding: 10px 8px;
+  border-radius: 0px 8px 8px 0;
+  border: 2px solid #a8a8a8;
+  border-left: none;
+  background: #0082c8;
+  color: var(--color-primary-element-text);
+}
+.main-details-share-list > .links > .thanks .find-people {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border: 2px solid #a8a8a8;
+  border-radius: 8px;
+}
+.main-details-share-list > .links > .thanks .find-people > span:nth-child(1) {
+  font-size: 5rem;
   margin-bottom: 8px;
 }
-.main-details-share-list > .links > .thanks > p {
+.main-details-share-list > .links > .thanks .find-people .close-find-people {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.main-details-share-list > .links > .thanks .error-find-people {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e9322d;
+}
+.main-details-share-list > .links .thanks-generate-link {
   border: 2px solid #a8a8a8;
   border-radius: 8px;
   display: flex;
@@ -512,8 +552,9 @@ body.contain {
   justify-content: center;
   text-align: center;
   padding: 8px;
+  margin-top: 16px;
 }
-.main-details-share-list > .links > .thanks > p > span {
+.main-details-share-list > .links .thanks-generate-link > span {
   font-size: 5rem;
   margin-bottom: 8px;
 }
