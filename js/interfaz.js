@@ -15,6 +15,9 @@ const createNewElement = document.querySelector("#create-new-element");
 
 const tableBody = document.querySelector(".docs-body");
 
+const accionsGroup = document.querySelector(".accions-group");
+const contador = document.querySelector(".contador");
+
 /** Aprendiendo de manejo de mediaQuery desde JS */
 const mediaQuery901to1200 = window.matchMedia("(min-width: 901px) and (max-width: 1200px)");
 const mediaQuery1201to1400 = window.matchMedia("(min-width: 1201px) and (max-width: 1400px")
@@ -188,8 +191,6 @@ function closeMenuCreateNewElement() {
   menuNewElement.classList.add("inactive");
 }
 
-/** Generar link */
-
 
 /* Funcion para crear elementos y agregarlos al main-content */
 createNewElement.addEventListener("submit", addNewElement);
@@ -219,6 +220,7 @@ function addNewElement(event) {
 
   const tdCheckbox = document.createElement("td");
   const inputCheckbox = document.createElement("input");
+  inputCheckbox.classList.add("check-select");
   inputCheckbox.setAttribute("type", "checkbox");
 
   /*1. Anidando elementos*/
@@ -312,6 +314,8 @@ function addNewElement(event) {
   /****************** */
 
   const tr = document.createElement("tr");
+  tr.classList.add("docs-body-tr");
+
   /*Anidando elementos*/
   tr.appendChild(tdCheckbox);
   tr.appendChild(tdName);
@@ -464,3 +468,37 @@ function closeMesFindPeople () {
   findPeople.classList.add("inactive")
 }
 
+/** Agregar fondo azul claro para elementos seleccionados */
+
+tableBody.addEventListener("click", selectItem)
+
+function selectItem (event) {
+  const checkboxSelect = event.target.classList.contains("ckeck-select");
+  const trContent = event.target.parentElement.parentElement;
+  
+  if (checkboxSelect){
+    trContent.classList.toggle("docs-body-tr");
+    trContent.classList.toggle("selected");
+  }  
+}
+
+
+/** Contador y opcion grupal para eliminar */
+//const accionsGroup = document.querySelector(".accions-group");
+
+tableBody.addEventListener("click", countAndDelete)
+
+function countAndDelete(){
+  const groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
+  //const groupCheckboxSelectChecked = groupCheckboxSelect.change;
+  
+  if (groupCheckboxSelect.length >= 1){
+    accionsGroup.classList.remove("inactive");  
+  } 
+  if (groupCheckboxSelect.length == 0) {
+    accionsGroup.classList.add("inactive");  
+  }
+  contador.innerText = groupCheckboxSelect.length
+}
+
+//const contador = document.querySelector(".contador");
