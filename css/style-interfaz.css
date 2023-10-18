@@ -289,7 +289,7 @@ body.contain {
   font-weight: 700;
   margin-left: 8px;
 }
-.main-content-docs .accions-group button {
+.main-content-docs .accions-group .delete-group {
   background-color: #006aa3;
   padding: 8px;
   color: var(--color-primary-element-text);
@@ -297,6 +297,9 @@ body.contain {
   border-radius: 4px;
   margin-left: 8px;
   cursor: pointer;
+}
+.main-content-docs .accions-group .delete-group:active {
+  background: #0082c8;
 }
 .main-content-docs > .docs {
   width: 100%;

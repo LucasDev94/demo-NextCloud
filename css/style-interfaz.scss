@@ -349,7 +349,7 @@ body.contain {
         font-weight: 700;
         margin-left: 8px;
 
-        button{
+        .delete-group{
           background-color: #006aa3;
           padding: 8px;
           color: var(--color-primary-element-text);
@@ -357,6 +357,10 @@ body.contain {
           border-radius: 4px;
           margin-left: 8px;
           cursor: pointer;
+
+          &:active{
+            background: #0082c8;
+          }
         }
       }
 

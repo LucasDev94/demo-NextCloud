@@ -18,6 +18,7 @@ const tableBody = document.querySelector(".docs-body");
 const accionsGroup = document.querySelector(".accions-group");
 const inputSelectGroup = document.querySelector(".check-select-group");
 const contador = document.querySelector(".contador");
+const deleteGroup = document.querySelector(".delete-group");
 
 /** Aprendiendo de manejo de mediaQuery desde JS */
 const mediaQuery901to1200 = window.matchMedia("(min-width: 901px) and (max-width: 1200px)");
@@ -523,6 +524,22 @@ function selectGroup (event){
       item.parentElement.parentElement.classList.remove("selected")
     })
   }
-  
+
   countAndDelete();  
+}
+
+
+/** Eliminar seleccion */
+//const deleteGroup = document.querySelector(".delete-group");
+deleteGroup.addEventListener("click", deleteGroupElements);
+
+function deleteGroupElements(){
+  let groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
+
+  groupCheckboxSelect.forEach((item) => {
+    tableBody.removeChild(item.parentElement.parentElement)
+  })
+
+  inputSelectGroup.checked = false;
+  countAndDelete();
 }
