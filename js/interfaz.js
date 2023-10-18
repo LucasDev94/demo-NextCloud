@@ -39,10 +39,6 @@ const powerOff = document.querySelector(".header-navbar-right-item-user");
 const showCloseSesion = document.querySelector(".close-session");
 const xClosedThanks = document.querySelector(".closed-thanks");
 const btnClosedSesion = document.querySelector(".btn-closed-sesion");
-const powerOff = document.querySelector(".header-navbar-right-item-user");
-const showCloseSesion = document.querySelector(".close-session");
-const xClosedThanks = document.querySelector(".closed-thanks");
-const btnClosedSesion = document.querySelector(".btn-closed-sesion");
 
 /** AddEventListener */
 tableBody.addEventListener("click", openDetails);
