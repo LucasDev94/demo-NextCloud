@@ -2,6 +2,7 @@ const optionsDetails = document.querySelectorAll(".dots-details");
 const details = document.querySelector(".main-details");
 const thanksGenerateLink = document.querySelector(".thanks-generate-link");
 const generateLink = document.querySelector(".generate-link");
+const iconCloseDetails = document.querySelector(".icon-close");
 const sharePeople = document.querySelector(".share-people");
 const nameSharePeople = document.querySelector(".nameToFind");
 const errorFindPeople = document.querySelector(".error-find-people");
@@ -35,11 +36,25 @@ const links = document.querySelector(".links");
 const versions = document.querySelector(".versions");
 
 
-/** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
+/** AddEventListener */
 tableBody.addEventListener("click", openDetails);
+tableBody.addEventListener("click", deleteElement);
+createNewElement.addEventListener("submit", addNewElement);
+iconCloseDetails.addEventListener("click", closeAsideDetails);
+showActivity.addEventListener("click", showDetailActivity);
+showLinks.addEventListener("click", showDetailLinks);
+showVersions.addEventListener("click", showDetailversions);
+generateLink.addEventListener("click", genLink);
+sharePeople.addEventListener("submit", showLinksPeople);
+closeTextFindPeople.addEventListener("click", closeMesFindPeople);
+tableBody.addEventListener("change", countAndDelete)
+inputSelectGroup.addEventListener("change", selectGroup)
+deleteGroup.addEventListener("click", deleteGroupElements);
+/************************************************** */
+
+/** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
+//tableBody.addEventListener("click", openDetails);
 function openDetails(event) {
-  // console.log("Hola desde la consola")
-  //console.dir(event);
 
   /** Abre el aside de detalles */
   if (event.target.classList.contains("dots-details")) {
@@ -52,10 +67,7 @@ function openDetails(event) {
   let tdModify = document.querySelectorAll(".docs-body tr td:nth-child(5)");
 
   if (mediaQuery901to1200.matches && !details.classList.contains("inactive")) {
-    //console.log("estamos en una pantalla que va de 901ox a 1200px");
-    //console.log(trElements);
-    //console.log(tdSize)
-
+    
     /** display: none para td de tamaño */
     tdSize.forEach((tdElmSize) => {
       tdElmSize.classList.add("inactive");
@@ -94,7 +106,6 @@ function openDetails(event) {
     trElements.forEach((trElem) => {
       trElem.style.gridTemplateColumns = "0.5fr 4fr 0.5fr 1.3fr 1.5fr 0.5fr"
     })
-    //console.log("Estoy en pantalla mayor a 1201px")
   }
 
   if (mediaQuery1201to1400.matches && details.classList.contains("inactive")){
@@ -112,7 +123,6 @@ function openDetails(event) {
 
   if(mediaQuery1401to1600.matches && details.classList.contains("inactive")){
     trElements.forEach((trElem) => {
-      //trElem.style.gridTemplateColumns = "0.4fr 7fr 0.4fr 1fr 1fr 0.4fr"
       trElem.removeAttribute("style")
     })
   }
@@ -125,12 +135,9 @@ function openDetails(event) {
 
   if(mediaQuery1601toUP.matches && details.classList.contains("inactive")){
     trElements.forEach((trElem) => {
-      //trElem.style.gridTemplateColumns = "0.4fr 7fr 0.4fr 1fr 1fr 0.4fr"
       trElem.removeAttribute("style")
     })
   }
-
-  //0.6fr 11fr 0.5fr 1.5fr 1.5fr 0.6fr
   
   /** Usando el event que se imprime en la consolo se navego por sus propiedades hasta encontrar el segundo td, ahi con querySelector se selecciono el p y luego se contenido */
 
@@ -161,16 +168,14 @@ function openDetails(event) {
 }
 
 /** Eliminar elemento */
-tableBody.addEventListener("click", deleteElement);
+//tableBody.addEventListener("click", deleteElement);
 function deleteElement(event) {
   if (event.target.classList.contains("delete-element")) {
     let trElement = event.target.parentElement.parentElement;
-    //console.log(trElement)
     tableBody.removeChild(trElement);
 
     if (!details.classList.contains("inactive")) {
       details.classList.add("inactive");
-      //console.log("hola");
     }
   }
 }
@@ -195,7 +200,7 @@ function closeMenuCreateNewElement() {
 
 
 /* Funcion para crear elementos y agregarlos al main-content */
-createNewElement.addEventListener("submit", addNewElement);
+//createNewElement.addEventListener("submit", addNewElement);
 function addNewElement(event) {
   event.preventDefault();
 
@@ -267,14 +272,9 @@ function addNewElement(event) {
     diagrama: ".dwg",
   };
 
-  //console.log("valueOptionSelect:", valueOptionSelect);
-  //console.log("nameNewElement:", nameNewElement);
-  //console.log("typeExtNewElement[valueOptionSelect]:", typeExtNewElement[valueOptionSelect]);
-
   if (typeExtNewElement[valueOptionSelect]) {
     tdNameP.innerText = `${elementToCreate.name}${typeExtNewElement[valueOptionSelect]}`;
   }
-  console.log(elementToCreate);
 
   /*2. Anidando elementos*/
   tdName.appendChild(tdNameIcon);
@@ -335,10 +335,7 @@ function addNewElement(event) {
   menuNewElement.classList.add("inactive");
 }
 
-const iconCloseDetails = document.querySelector(".icon-close");
-
-iconCloseDetails.addEventListener("click", closeAsideDetails)
-
+//iconCloseDetails.addEventListener("click", closeAsideDetails)
 function closeAsideDetails(){
   if (!details.classList.contains("inactive")){
     details.classList.add("inactive")
@@ -375,7 +372,7 @@ function closeAsideDetails(){
 // const links = document.querySelector(".links");
 // const versions = document.querySelector(".versions");
 
-showActivity.addEventListener("click", showDetailActivity)
+//showActivity.addEventListener("click", showDetailActivity)
 function showDetailActivity(){
   activity.classList.remove("inactive");
   
@@ -393,7 +390,7 @@ function showDetailActivity(){
   }
 }
 
-showLinks.addEventListener("click", showDetailLinks)
+//showLinks.addEventListener("click", showDetailLinks)
 function showDetailLinks(){
   links.classList.remove("inactive");
   showLinks.classList.add("item-focus");
@@ -410,7 +407,7 @@ function showDetailLinks(){
   }
 }
 
-showVersions.addEventListener("click", showDetailversions)
+//showVersions.addEventListener("click", showDetailversions)
 function showDetailversions(){
   versions.classList.remove("inactive");
 
@@ -430,8 +427,7 @@ function showDetailversions(){
 
 
 //const generateLink = document.querySelector(".generate-link");
-generateLink.addEventListener("click", genLink);
-
+//generateLink.addEventListener("click", genLink);
 function genLink (){
   thanksGenerateLink.classList.toggle("inactive");
   generateLink.classList.toggle("rotate");
@@ -444,13 +440,11 @@ function genLink (){
 //const namesharePeople = document.querySelector(".nameToFind");
 //const errorFindPeople = document.querySelector(".error-find-people");
 
-sharePeople.addEventListener("submit", showLinksPeople)
-
+//sharePeople.addEventListener("submit", showLinksPeople);
 function showLinksPeople(event){
   event.preventDefault();
   const reGexFindPeople = /^@([a-zA-Z0-9]){1,20}$/;
   if (reGexFindPeople.test(nameSharePeople.value)){
-    //console.log("Hola")
     findPeople.classList.remove("inactive");
     if(!errorFindPeople.classList.contains("inactive")){
       errorFindPeople.classList.add("inactive")
@@ -464,8 +458,7 @@ function showLinksPeople(event){
 }
 
 //const closeTextFindPeople = document.querySelector(".close-find-people");
-closeTextFindPeople.addEventListener("click", closeMesFindPeople);
-
+//closeTextFindPeople.addEventListener("click", closeMesFindPeople);
 function closeMesFindPeople () {
   findPeople.classList.add("inactive")
 }
@@ -487,9 +480,7 @@ function selectItem (event) {
 
 /** Contador y opcion grupal para eliminar */
 //const accionsGroup = document.querySelector(".accions-group");
-
-tableBody.addEventListener("change", countAndDelete)
-
+//tableBody.addEventListener("change", countAndDelete)
 function countAndDelete(){
   let groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
   //const groupCheckboxSelectChecked = groupCheckboxSelect.change;
@@ -506,8 +497,7 @@ function countAndDelete(){
 /** Funcion para marcar todos los inputs tipo checkbox */
 //const inputSelectGroup = document.querySelector(".check-select-group");
 
-inputSelectGroup.addEventListener("change", selectGroup)
-
+//inputSelectGroup.addEventListener("change", selectGroup)
 function selectGroup (event){
   let groupCheckboxSelect = document.querySelectorAll(".check-select");
   
@@ -531,8 +521,7 @@ function selectGroup (event){
 
 /** Eliminar seleccion */
 //const deleteGroup = document.querySelector(".delete-group");
-deleteGroup.addEventListener("click", deleteGroupElements);
-
+//deleteGroup.addEventListener("click", deleteGroupElements);
 function deleteGroupElements(){
   let groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
 
