@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"/> <!--GRAD@24,400,1,0"/> el 1 rellena los icono GRAD@24,400,0,0"/> deja delineados los iconos-->
     <link rel="stylesheet" href="css/style-interfaz.css"/>
+    <link rel="icon" type="image/svg+xml" href="./images/icon_cloud.svg">
     <title>Aurora Nextcloud</title>
   </head>
 
@@ -31,7 +32,7 @@
                 <li class="header-navbar-right-item"><span class="material-symbols-outlined">search</span></li>
                 <li class="header-navbar-right-item"><span class="material-symbols-outlined">notifications</span></li>
                 <li class="header-navbar-right-item"><span class="material-symbols-outlined">contacts</span></li>
-                <li class="header-navbar-right-item"><span class="header-navbar-right-item-user">LC</span></li>
+                <li class="header-navbar-right-item"><span class="header-navbar-right-item-user material-symbols-outlined">power_settings_new</span></li>
             </ul>
         </div>
       </nav>
@@ -258,6 +259,15 @@
         </div>
       </aside>
     </main>
+    
+    <section class="close-session inactive">
+      <div class="close-session-thanks">
+        <span class="material-symbols-outlined closed-thanks">close</span>
+        <span class="material-symbols-outlined face-thanks">add_reaction</span>
+        <p>Te agradezco por dedicar unos minutos a ver mi pequeño proyecto. Aún estamos aprendiendo y seguimos adelante.</p>
+        <button class="btn-closed-sesion">Cerrar sesión</button>
+      </div>
+    </section>
 
     <script src="./js/interfaz.js"></script>
   </body>

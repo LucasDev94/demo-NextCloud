@@ -35,6 +35,10 @@ const activity = document.querySelector(".activity");
 const links = document.querySelector(".links");
 const versions = document.querySelector(".versions");
 
+const powerOff = document.querySelector(".header-navbar-right-item-user");
+const showCloseSesion = document.querySelector(".close-session");
+const xClosedThanks = document.querySelector(".closed-thanks");
+const btnClosedSesion = document.querySelector(".btn-closed-sesion");
 
 /** AddEventListener */
 tableBody.addEventListener("click", openDetails);
@@ -50,6 +54,9 @@ closeTextFindPeople.addEventListener("click", closeMesFindPeople);
 tableBody.addEventListener("change", countAndDelete)
 inputSelectGroup.addEventListener("change", selectGroup)
 deleteGroup.addEventListener("click", deleteGroupElements);
+powerOff.addEventListener("click", showMenuThanks);
+xClosedThanks.addEventListener("click", closeMenuThanks)
+btnClosedSesion.addEventListener("click", closedSesion)
 /************************************************** */
 
 /** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
@@ -531,4 +538,25 @@ function deleteGroupElements(){
 
   inputSelectGroup.checked = false;
   countAndDelete();
+}
+
+/** Cerrar sesion */
+//const powerOff = document.querySelector(".header-navbar-right-item-user");
+// const showCloseSesion = document.querySelector(".close-session");
+// const xClosedThanks = document.querySelector(".closed-thanks");
+// const btnClosedSesion = document.querySelector(".btn-closed-sesion");
+
+//powerOff.addEventListener("click", showMenuThanks)
+function showMenuThanks (){
+  showCloseSesion.classList.remove("inactive");
+}
+
+//xClosedThanks.addEventListener("click", closeMenuThanks)
+function closeMenuThanks(){
+  showCloseSesion.classList.add("inactive");
+}
+
+//btnClosedSesion.addEventListener("click", closedSesion)
+function closedSesion () {
+  window.location.href = "login.html"
 }
