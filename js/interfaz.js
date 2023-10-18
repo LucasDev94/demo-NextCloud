@@ -35,6 +35,10 @@ const activity = document.querySelector(".activity");
 const links = document.querySelector(".links");
 const versions = document.querySelector(".versions");
 
+const powerOff = document.querySelector(".header-navbar-right-item-user");
+const showCloseSesion = document.querySelector(".close-session");
+const xClosedThanks = document.querySelector(".closed-thanks");
+const btnClosedSesion = document.querySelector(".btn-closed-sesion");
 
 /** AddEventListener */
 tableBody.addEventListener("click", openDetails);
@@ -531,4 +535,28 @@ function deleteGroupElements(){
 
   inputSelectGroup.checked = false;
   countAndDelete();
+}
+
+/** Cerrar sesion */
+//const powerOff = document.querySelector(".header-navbar-right-item-user");
+// const showCloseSesion = document.querySelector(".close-session");
+// const xClosedThanks = document.querySelector(".closed-thanks");
+// const btnClosedSesion = document.querySelector(".btn-closed-sesion");
+
+powerOff.addEventListener("click", showMenuThanks)
+
+function showMenuThanks (){
+  showCloseSesion.classList.remove("inactive");
+}
+
+xClosedThanks.addEventListener("click", closeMenuThanks)
+
+function closeMenuThanks(){
+  showCloseSesion.classList.add("inactive");
+}
+
+btnClosedSesion.addEventListener("click", closedSesion)
+
+function closedSesion () {
+  window.location.href = "login.html"
 }

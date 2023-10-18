@@ -755,6 +755,54 @@ body.contain {
   }
 }
 
+.close-session{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.452);
+  display: grid;
+  place-items: center;
+
+  &-thanks{
+    width: 350px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+
+    .closed-thanks{
+      position: absolute;
+      right: 12px;
+      cursor: pointer;
+    }
+
+    .face-thanks{
+      font-size: 5rem;
+      margin-bottom: 12px;
+      color: #0082c8;
+    }
+
+    .btn-closed-sesion{
+      background: #0082c8;
+      padding: 12px;
+      color: var(--color-primary-element-text);
+      font-size: 1.4rem;
+      border-radius: 12px;
+      border: none;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+  }
+}
+
 .rotate{
   transform: rotate(45deg);
   transition: .4s;
