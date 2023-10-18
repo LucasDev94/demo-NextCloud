@@ -16,6 +16,7 @@ const createNewElement = document.querySelector("#create-new-element");
 const tableBody = document.querySelector(".docs-body");
 
 const accionsGroup = document.querySelector(".accions-group");
+const inputSelectGroup = document.querySelector(".check-select-group");
 const contador = document.querySelector(".contador");
 
 /** Aprendiendo de manejo de mediaQuery desde JS */
@@ -470,26 +471,26 @@ function closeMesFindPeople () {
 
 /** Agregar fondo azul claro para elementos seleccionados */
 
-tableBody.addEventListener("click", selectItem)
+tableBody.addEventListener("change", selectItem)
 
 function selectItem (event) {
-  const checkboxSelect = event.target.classList.contains("ckeck-select");
-  const trContent = event.target.parentElement.parentElement;
+  let checkboxSelect = event.target.classList.contains("check-select");
+  let trContent = event.target.parentElement.parentElement;
   
   if (checkboxSelect){
     trContent.classList.toggle("docs-body-tr");
     trContent.classList.toggle("selected");
-  }  
+  }
 }
 
 
 /** Contador y opcion grupal para eliminar */
 //const accionsGroup = document.querySelector(".accions-group");
 
-tableBody.addEventListener("click", countAndDelete)
+tableBody.addEventListener("change", countAndDelete)
 
 function countAndDelete(){
-  const groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
+  let groupCheckboxSelect = document.querySelectorAll(".check-select:checked");
   //const groupCheckboxSelectChecked = groupCheckboxSelect.change;
   
   if (groupCheckboxSelect.length >= 1){
@@ -501,4 +502,27 @@ function countAndDelete(){
   contador.innerText = groupCheckboxSelect.length
 }
 
-//const contador = document.querySelector(".contador");
+/** Funcion para marcar todos los inputs tipo checkbox */
+//const inputSelectGroup = document.querySelector(".check-select-group");
+
+inputSelectGroup.addEventListener("change", selectGroup)
+
+function selectGroup (event){
+  let groupCheckboxSelect = document.querySelectorAll(".check-select");
+  
+  if (inputSelectGroup.checked){
+    groupCheckboxSelect.forEach((item) =>{
+      item.checked = true; /** El cheked toca asignarle true para que se marquen */
+      item.parentElement.parentElement.classList.add("selected")
+    })
+  }
+
+  if (inputSelectGroup.checked == false){
+    groupCheckboxSelect.forEach((item) => {
+      item.checked = false;
+      item.parentElement.parentElement.classList.remove("selected")
+    })
+  }
+  
+  countAndDelete();  
+}
