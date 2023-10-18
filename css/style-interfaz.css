@@ -359,7 +359,6 @@ body.contain {
   height: 1.6rem;
   width: 1.6rem;
   border-radius: 1px;
-  z-index: 2;
 }
 .main-content-docs > .docs > .docs-body > tr > td > input:checked {
   background: #0082c9;
@@ -608,6 +607,13 @@ body.contain {
   .main-navigation {
     display: none;
   }
+  .main-details {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0;
+    z-index: 2;
+  }
   th:nth-child(4),
   th:nth-child(5) {
     display: none !important;
@@ -624,6 +630,14 @@ body.contain {
   .main-navigation {
     width: 230px;
   }
+  .main-details {
+    position: absolute;
+    width: 50% !important;
+    height: 100% !important;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
   th:nth-child(5) {
     display: none !important;
   }
@@ -631,7 +645,7 @@ body.contain {
     display: none !important;
   }
   .main-content-docs > .docs > .docs-body tr {
-    grid-template-columns: 0.5fr 4fr 0.5fr 1fr 0.5fr;
+    grid-template-columns: 0.5fr 3.8fr 0.5fr 1.2fr 0.5fr;
   }
 }
 @media (min-width: 901px) and (max-width: 1200px) {
