@@ -623,6 +623,56 @@ body.contain {
   cursor: pointer;
 }
 
+.open {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.452);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+}
+.open-elemts {
+  background: #0082c8;
+  width: 60%;
+  padding: 24px;
+  position: relative;
+  border-radius: 16px;
+}
+.open-elemts-close {
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+}
+.open-elemts-title {
+  font-weight: 700;
+  border: var(--border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+}
+.open-elemts-title h3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+.open-elemts-body {
+  margin-top: 20px;
+  border: var(--border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.open-elemts-body .material-symbols-outlined {
+  text-align: center;
+  font-size: 7rem;
+}
+
 .rotate {
   transform: rotate(45deg);
   transition: 0.4s;
@@ -669,6 +719,9 @@ body.contain {
   .docs-body tr {
     grid-template-columns: 0.5fr 6fr 1fr 1fr !important;
   }
+  .open-elemts {
+    width: 90%;
+  }
 }
 @media (min-width: 701px) and (max-width: 900px) {
   .main-navigation {
@@ -690,6 +743,9 @@ body.contain {
   }
   .main-content-docs > .docs > .docs-body tr {
     grid-template-columns: 0.5fr 3.8fr 0.5fr 1.2fr 0.5fr;
+  }
+  .open-elemts {
+    width: 80%;
   }
 }
 @media (min-width: 901px) and (max-width: 1200px) {

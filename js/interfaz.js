@@ -35,6 +35,10 @@ const activity = document.querySelector(".activity");
 const links = document.querySelector(".links");
 const versions = document.querySelector(".versions");
 
+const content = document.querySelector(".open");
+const nameElement = document.querySelector(".name-elemt");
+const xCloseContent = document.querySelector(".open-elemts-close");
+
 const powerOff = document.querySelector(".header-navbar-right-item-user");
 const showCloseSesion = document.querySelector(".close-session");
 const xClosedThanks = document.querySelector(".closed-thanks");
@@ -57,6 +61,8 @@ deleteGroup.addEventListener("click", deleteGroupElements);
 powerOff.addEventListener("click", showMenuThanks);
 xClosedThanks.addEventListener("click", closeMenuThanks)
 btnClosedSesion.addEventListener("click", closedSesion)
+tableBody.addEventListener("click", openContent);
+xCloseContent.addEventListener("click", closeWindowContent);
 /************************************************** */
 
 /** Aprendiendo delegación de eventos, al seleccionar un elemento html contenedor en este caso el tbody entonces este podra seleccionar incluso los nuevos elementos creados dinamicamente con JS */
@@ -66,7 +72,6 @@ function openDetails(event) {
   /** Abre el aside de detalles */
   if (event.target.classList.contains("dots-details")) {
     details.classList.toggle("inactive");
-  }
 
   /** Cambia el tamaño del td del nombre para una mejor visualización */
   let trElements = document.querySelectorAll(".docs-body tr");
@@ -173,6 +178,7 @@ function openDetails(event) {
   findPeople.classList.add("inactive");
   errorFindPeople.classList.add("inactive");
 }
+}
 
 /** Eliminar elemento */
 //tableBody.addEventListener("click", deleteElement);
@@ -242,6 +248,7 @@ function addNewElement(event) {
   /******************* */
 
   const tdName = document.createElement("td");
+  tdName.classList.add("tdElement")
   const tdNameIcon = document.createElement("span");
   tdNameIcon.classList.add("material-symbols-outlined");
 
@@ -538,6 +545,35 @@ function deleteGroupElements(){
 
   inputSelectGroup.checked = false;
   countAndDelete();
+}
+
+/** Abrir el contenido de los elementos */
+//const nameElement = document.querySelector(".name-elemt");
+//const closeContent = document.querySelector(".open-elemts-close");
+//tableBody.addEventListener("click", openContent);
+//xCloseContent.addEventListener("click", closeWindowContent);
+//const content = document.querySelector(".open");
+//tableBody.addEventListener("click", openContent);
+
+function openContent(event){
+  //let NameElement = event.target.parentElement.children[1].tagName == "P"
+  //let tdNameElement = event.target.children[1].tagName == "P"
+  //let iconOrNameElement = event.target.parentElement.children[1]
+  /** Nuevo dato aprendido: con ? se verifica si el elemento existe para no generar errores */
+
+  if (event.target.parentElement.children[1]?.tagName == "P"){
+    nameElement.innerText = event.target.parentElement.children[1].textContent;
+    content.classList.remove("inactive")
+  }
+
+  if (event.target.children[1]?.tagName == "P"){
+    nameElement.innerText = event.target.children[1].textContent;
+    content.classList.remove("inactive")
+  }
+}
+
+function closeWindowContent(){
+  content.classList.add("inactive");
 }
 
 /** Cerrar sesion */
