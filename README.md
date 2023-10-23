@@ -2,9 +2,9 @@
 
 Hola mi nombre es Luis Carlos, y este proyecto lo e denominado demo-NextCloud, el cual trata de imitar un poco la funcionalidad de Nextcloud, el proyecto esta construido en html, css y js.
 
-Repositorio: [https://github.com/LucasDev94/demo-NextCloud.git](https://github.com/LucasDev94/demo-NextCloud.git "https://github.com/LucasDev94/demo-NextCloud.git")
-Readme.md: [https://lucasdev94.github.io/demo-NextCloud/](https://lucasdev94.github.io/demo-NextCloud/ "https://lucasdev94.github.io/demo-NextCloud/")
-Publicación web: https://lucasdev94.github.io/demo-NextCloud/login.html
+- Repositorio: [https://github.com/LucasDev94/demo-NextCloud.git](https://github.com/LucasDev94/demo-NextCloud.git "https://github.com/LucasDev94/demo-NextCloud.git")
+- Readme.md: [https://lucasdev94.github.io/demo-NextCloud/](https://lucasdev94.github.io/demo-NextCloud/ "https://lucasdev94.github.io/demo-NextCloud/")
+- Publicación web: https://lucasdev94.github.io/demo-NextCloud/login.html
 
 Por mi parte informo que este proyecto hace parte de mi proceso de aprendizaje de programación, específicamente en JavaScript. Actualmente estoy estudiando en Platzi y ya había conseguido algunos certificados mediante un examen, pero esta vez quise hacer algo diferente, construí un pequeño proyecto para practicar todo lo aprendido y asi obtener el certificado del **"Curso Práctico de JavaScript"**
 
